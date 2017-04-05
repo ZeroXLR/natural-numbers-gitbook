@@ -191,7 +191,7 @@ $$ So, just like before, one does induction on $$x$$:
 **Proof Sketch**: Obviously $$x \cdot 0=0$$ by definition. Applying [commutativity](#lemma-commutmultiply) to this yields the other equality.
 
 
-## Lemma NoZDiv
+## Lemma NoZDivs
 
 **$${{N}}$$ has No Zero Divisors**: _For all $$x,y\in{{N}}$$, if $$x \cdot y = 0$$, then $$x=0$$ or $$y=0$$_.
 
@@ -207,7 +207,7 @@ by the [definitions of addition and multiplication alone](RecursiveDefinitions.m
 **Multiplication is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$z \neq 0$$ and $$x \cdot z=y \cdot z$$, then $$x=y$$_.
 
 **Proof**: Let $${{S}}=\{x\in{{N}}:\ \forall y,z\in{{N}}\ [\text{if}\ z \neq 0\ \text{and}\ x \cdot z=y \cdot z\text{, then}\ x=y]\}$$.
-1. To show $$0\in{{S}}$$, suppose that $$z \neq 0$$ and $$0 \cdot z=0=y \cdot z$$. But then by the [previous lemma](#lemma-nozdiv), $$y$$ must be $$0$$.
+1. To show $$0\in{{S}}$$, suppose that $$z \neq 0$$ and $$0 \cdot z=0=y \cdot z$$. But then by the [previous lemma](#lemma-nozdivs), $$y$$ must be $$0$$.
 2. Now, assume that $$x\in{{S}}$$. To show $$S(x)\in{{S}}$$ also, assume the hypothesis of the lemma i.e. suppose that $$z \neq 0$$ and that
 $$
 S(x) \cdot z=z \cdot S(x)=z \cdot x + z=x \cdot z + z=y \cdot z
