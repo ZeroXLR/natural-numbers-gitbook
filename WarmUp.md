@@ -3,7 +3,7 @@
 
 ## Definition Peano Axioms
 
-The natural numbers are defined axiomatically by the Peano Axioms. In other words, their existences and properties are stated outright on the backdrop of a larger theory like set theory or first order logic. In this case, as mentioned earlier, the backdrop is informal set theory. With this overview in mind, one now assumes that there exists a unique set $${{N}}$$ such that
+The natural numbers are defined axiomatically by the Peano axioms. In other words, their existences and properties are stated outright on the backdrop of a larger theory like set theory or first order logic. In this case, as mentioned earlier, the backdrop is informal set theory. With this overview in mind, one now assumes that there exists a unique set $${{N}}$$ such that
 
 <ol start="0">
     <li>the symbol $$0$$ is in it</li>
