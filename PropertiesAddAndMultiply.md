@@ -5,7 +5,7 @@
 > I now prove the expected algebraic properties of $$+$$ and $$\cdot$$. By the end of all the proofs, one will have characterized the natural numbers as a special algebraic object called a [semiring](https://en.wikipedia.org/wiki/Semiring#Definition).
 
 
-## Lemma AssocAdd
+## Theorem AssocAdd
 
 **Associativity of Addition**: _For all $$x,y,z\in{{N}}$$, $$(x+y)+z=x+(y+z)$$_.
 
@@ -30,7 +30,7 @@ This completes the induction and shows that $${{N}}\subseteq{{S}}$$, so that any
 Before one shows the next lemma, I would like to remind the reader of an easy property that I showed when I [defined addition](RecursiveDefinitions.md#examples): $$x+S(0)=S(x)$$.
 
 
-## Lemma CommutAdd
+## Theorem CommutAdd
 
 **Commutativity of Addition**: _For all $$x,y\in{{N}}$$, $$x+y=y+x$$_.
 
@@ -45,7 +45,7 @@ $$
 x+S(y) &= S(x+y) \ \text{by the definition of addition}\\
        &= S(y+x) \ \text{since }y\in{{S}}\\
        &= (y+x)+S(0) \ \text{by a property of addition shown earlier}\\
-       &= y+(x+S(0)) \ \text{by associativity}\\
+       &= y+(x+S(0)) \ \text{by 1}\\
 \end{aligned}
 $$
 At this point, one is stuck. One needs the fact that $$x+S(0)=S(0)+x$$ to push the argument through. Because if that were true,
@@ -68,14 +68,14 @@ $$ So then, how does one show that $$x+S(0)=S(0)+x$$? By induction on $$x$$ of c
     $$
 
 
-## Lemma IdAdd
+## Theorem IdAdd
 
 **Identity of Addition**: _For all $$x\in{{N}}$$, $$x+0=0+x=x$$_.
 
-**Proof**: Obviously $$x+0=x$$ by the [definition of addition](RecursiveDefinitions.md#examples) itself. At the same time, by [commutativity](#lemma-commutadd), $$0+x=x+0=x$$.
+**Proof**: Obviously $$x+0=x$$ by the [definition of addition](RecursiveDefinitions.md#examples) itself. At the same time, by [commutativity](#theorem-commutadd), $$0+x=x+0=x$$.
 
 
-## Lemma CancAdd
+## Theorem CancAdd
 
 **Addition is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$x+z=y+z$$, then $$x=y$$_.
 
@@ -91,14 +91,14 @@ $$
 $$
 Now, since the lemma is true for $$S(0)$$, $$x+y=y+z$$. But the lemma is also true for $$z$$; so, $$x=y$$.
 
-Note that because of [commutativity](#lemma-commutadd), one can also cancel from the left i.e. if $$z+x=z+y$$, then $$x=y$$.
+Note that because of [commutativity](#theorem-commutadd), one can also cancel from the left i.e. if $$z+x=z+y$$, then $$x=y$$.
 
 
 &nbsp;
 > So far, I have shown that the addition function on $${{N}}$$ is associative, commutative and cancellative. It also has an identity. What this means is that $${{N}}$$ is a cancellative, commutative [monoid](https://en.wikipedia.org/wiki/Monoid) under $$+$$. I now turn to multiplication:
 
 
-## Lemma AssocMultiply
+## Theorem AssocMultiply
 
 **Associativity of Multiplication**: _For all $$x,y,z\in{{N}}$$, $$(x \cdot y) \cdot z=x \cdot (y \cdot z)$$_.
 
@@ -116,7 +116,7 @@ x \cdot (y \cdot S(z)) &= x \cdot (y \cdot z + y) \ \text{by the definition of m
 $$
 
 
-## Lemma RDistMultiplyAdd
+## Theorem RDistMultiplyAdd
 
 **Right Distributivity of Multiplication over Addition**: _For all $$x,y,z\in{{N}}$$, $$(x+y) \cdot z=x \cdot z + y \cdot z$$_.
 
@@ -133,7 +133,7 @@ $$
 $$
 
 
-## Lemma CommutMultiply
+## Theorem CommutMultiply
 
 **Commutativity of Multiplication**: _For all $$x,y\in{{N}}$$, $$x \cdot y=y \cdot x$$_.
 
@@ -175,28 +175,28 @@ $$ So, just like before, one does induction on $$x$$:
     $$
 
 
-## Lemma IdMultiply
+## Theorem IdMultiply
 
 **Identity of Multiplication**: _For all $$x\in{{N}}$$, $$x \cdot 1=1 \cdot x=x$$ where $$1=S(0)$$_.
 
-**Proof**: Note that $$x \cdot 1=x \cdot S(0)=x \cdot 0 + x = 0+x=x$$. The reader can fill in the relevant details for manipulations involving $$+$$. For the manipulations involving $$\cdot$$, note the [definition of multiplication and some associated properties shown earlier](RecursiveDefinitions.md#examples). At the same time, by [commutativity](#lemma-commutmultiply), $$1 \cdot x=x \cdot 1=x$$.
+**Proof**: Note that $$x \cdot 1=x \cdot S(0)=x \cdot 0 + x = 0+x=x$$. The reader can fill in the relevant details for manipulations involving $$+$$. For the manipulations involving $$\cdot$$, note the [definition of multiplication and some associated properties shown earlier](RecursiveDefinitions.md#examples). At the same time, by [commutativity](#theorem-commutmultiply), $$1 \cdot x=x \cdot 1=x$$.
 
 
-## Lemma LDistMultiplyAdd
+## Theorem LDistMultiplyAdd
 
 **Left Distributivity of Multiplication over Addition**: _For all $$x,y,z\in{{N}}$$, $$z \cdot (x+y)=z \cdot x + z \cdot y$$_.
 
-**Proof Sketch**: Simply apply [commutativity](#lemma-commutmultiply) of $$\cdot$$ to [right distributivity](#lemma-rdistmultiplyadd).
+**Proof Sketch**: Simply apply [commutativity](#theorem-commutmultiply) of $$\cdot$$ to [right distributivity](#theorem-rdistmultiplyadd).
 
 
-## Lemma ZAnnMultiply
+## Theorem ZAnnMultiply
 
 **Zero Annihilates by Multiplication**: _For all $$x\in{{N}}$$, $$x \cdot 0=0 \cdot x=0$$_.
 
-**Proof Sketch**: Obviously $$x \cdot 0=0$$ by definition. Applying [commutativity](#lemma-commutmultiply) to this yields the other equality.
+**Proof Sketch**: $$x \cdot 0=0$$ by definition; applying [commutativity](#theorem-commutmultiply) to this yields the other equality.
 
 
-## Lemma NoZDivs
+## Theorem NoZDivs
 
 **$${{N}}$$ has No Zero Divisors**: _For all $$x,y\in{{N}}$$, if $$x \cdot y = 0$$, then $$x=0$$ or $$y=0$$_.
 
@@ -207,12 +207,12 @@ $$
 by the [definitions of addition and multiplication alone](RecursiveDefinitions.md#examples). But then, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(S(x') \cdot y'+x')$$ cannot be $$0$$.
 
 
-## Lemma CancMultiply
+## Theorem CancMultiply
 
 **Multiplication is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$z \neq 0$$ and $$z \cdot x=z \cdot x$$, then $$x=y$$_.
 
 **Proof**: Let $${{S}}=\{x\in{{N}}:\ \forall y,z\in{{N}}\ [\text{if}\ z \neq 0\ \text{and}\ z \cdot x=z \cdot y\text{, then}\ x=y]\}$$.
-1. To show $$0\in{{S}}$$, suppose that $$z \neq 0$$ and $$z \cdot 0=0=z \cdot y$$. But then by the [previous lemma](#lemma-nozdivs), $$y$$ must be $$0$$.
+1. To show $$0\in{{S}}$$, suppose that $$z \neq 0$$ and $$z \cdot 0=0=z \cdot y$$. But then by the [previous lemma](#theorem-nozdivs), $$y$$ must be $$0$$.
 2. Now, assume that $$x\in{{S}}$$. To show $$S(x)\in{{S}}$$ also, assume the hypothesis of the lemma i.e. suppose that $$z \neq 0$$ and that
 $$
 z \cdot S(x)=z \cdot x + z=z \cdot y
@@ -221,11 +221,11 @@ Now, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(x) \neq 0$$. Sin
 $$
 z \cdot x + z=z \cdot y=z \cdot S(y')=z \cdot y' + z
 $$
-Now, by [additive cancellation](#lemma-cancadd), $$z \cdot x=z \cdot y'$$. But as $$x\in{{S}}$$ and $$z \neq 0$$, this means that $$x=y'$$, so that $$S(x)=S(y')=y$$ by [Peano axiom 2](WarmUp.md#definition-peano-axioms). This concludes the induction.
+Now, by [additive cancellation](#theorem-cancadd), $$z \cdot x=z \cdot y'$$. But as $$x\in{{S}}$$ and $$z \neq 0$$, this means that $$x=y'$$, so that $$S(x)=S(y')=y$$ by [Peano axiom 2](WarmUp.md#definition-peano-axioms). This concludes the induction.
 
-Note that because of [commutativity](#lemma-commutmultiply), one can also cancel from the right i.e. if $$x \cdot z=y \cdot z$$, then $$x=y$$.
+Note that because of [commutativity](#theorem-commutmultiply), one can also cancel from the right i.e. if $$x \cdot z=y \cdot z$$, then $$x=y$$.
 
 
 ## Remarks
 
-This concludes the basic exploration of the algebraic structure of $${{N}}$$. All of these properties imply that $${{N}}$$ is a commutative, cancellative semiring that is also multiplicatively cancellative for all values except $$0$$.
+This concludes the basic exploration of the algebraic structure of $${{N}}$$. All of these properties imply that $${{N}}$$ is a commutative, cancellative semiring that is also multiplicatively cancellative for non-zero values.
