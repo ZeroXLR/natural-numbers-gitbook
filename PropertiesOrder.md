@@ -29,7 +29,7 @@
 
 **AntiSymmetry**: _For all $$x,y\in{{N}}$$, if $$x \leq y$$ and $$y \leq x$$, then $$x=y$$_.
 
-**Proof**: Assuming the hypothesis yields that there are $$n,n'\in{{N}}$$ such that $$x+n=y$$ and $$y+n'=x$$. Hence, $$(x+n)+n'=x+(n+n')=x=x+0$$. After cancelling, $$n+n'=0$$. By the previous lemma, $$n=0$$. Hence, $$x=x+0=x+n=y$$.
+**Proof**: Assuming the hypothesis yields that there are $$n,n'\in{{N}}$$ such that $$x+n=y$$ and $$y+n'=x$$. Hence, $$(x+n)+n'=x+(n+n')=x=x+0$$. After cancelling, $$n+n'=0$$ which, by the previous lemma's contrapositive, yields $$n=0$$. Hence, $$x=x+0=x+n=y$$.
 
 
 ## Interlude 0

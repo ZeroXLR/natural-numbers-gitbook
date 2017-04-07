@@ -2,7 +2,7 @@
 {% set S = "\\Sigma" %}
 
 
-> I now prove the expected algebraic properties of $$+$$ and $$\cdot$$. By the end of all the proofs, one will have characterized the natural numbers as a special algebraic object called a [semiring](https://en.wikipedia.org/wiki/Semiring).
+> I now prove the expected algebraic properties of $$+$$ and $$\cdot$$. By the end of all the proofs, one will have characterized the natural numbers as a special algebraic object called a [semiring](https://en.wikipedia.org/wiki/Semiring#Definition).
 
 
 ## Lemma AssocAdd
@@ -18,11 +18,16 @@ $$
 x+(y+S(z)) &= x+S(y+z) \ \text{by the definition of addition}\\
            &= S(x+(y+z)) \ \text{by the definition of addition}\\
            &= S((x+y)+z) \ \text{since }z\in{{S}}\\
-           &= (x+y)+S(z)
+           &= (x+y)+S(z) \ \text{by the definition of addition}
 \end{aligned}
 $$
 
 This completes the induction and shows that $${{N}}\subseteq{{S}}$$, so that any natural number must satisfy the set condition of $${{S}}$$, which is the lemma itself.
+
+
+## Reminder on a Property of Addition
+
+Before one shows the next lemma, I would like to remind the reader of an easy property that I showed when I [defined addition](RecursiveDefinitions.md#examples): $$x+S(0)=S(x)$$.
 
 
 ## Lemma CommutAdd
@@ -32,8 +37,8 @@ This completes the induction and shows that $${{N}}\subseteq{{S}}$$, so that any
 **Proof**: As always, let $${{S}}=\{y\in{{N}}:\ \forall x\in{{N}}\ [x+y=y+x]\}$$.
 
 1. One needs to show that $$0\in{{S}}$$ i.e. for all $$x\in{{N}}$$, $$x+0=0+x$$ This, itself, requires a mini-induction on $$x$$!
-    * Well, if $$x=0$$, $$x+0=0+0=0=0+0=0+x$$. The reader can fill in the details as needed.
-    * Now, suppose the claim is true for $$x$$. Then, $$0+S(x)=S(0+x)$$ by one of the [recursive properties of addition](RecursiveDefinitions.md#examples). But, as $$x$$ satisfies the claim, $$S(0+x)=S(x+0)$$; then, $$S(x+0)=S(x)$$ as $$x+0=x$$ by the other [recursive property of addition](RecursiveDefinitions.md#examples). And finally, the latter property also produces $$S(x)=S(x)+0$$.
+    * Well, if $$x=0$$, then $$x+0=0+0=0+x$$.
+    * Now, assume that the claim holds for $$x$$. Then, $$0+S(x)=S(0+x)$$ by the [definition of addition](RecursiveDefinitions.md#examples). But, as $$x$$ satisfies the claim, $$S(0+x)=S(x+0)$$. Next, $$S(x+0)=S(x)$$ by a [property of addition shown earlier](#reminder-on-a-property-of-addition). Finally, the [definition of addition](RecursiveDefinitions.md#examples) also gives $$S(x)=S(x)+0$$.
 2. Now, suppose $$y\in{{S}}$$. Then, for any $$x\in{{N}}$$:
 $$
 \begin{aligned}
@@ -74,7 +79,7 @@ $$ So then, how does one show that $$x+S(0)=S(0)+x$$? By induction on $$x$$ of c
 
 **Addition is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$x+z=y+z$$, then $$x=y$$_.
 
-**Proof**: Note that by the [definition of addition](RecursiveDefinitions.md#examples), the lemma is certainly true for $$z=0$$. In fact, the lemma is also true for $$z=S(0)$$: if $$x+S(0)=y+S(0)$$, then $$S(x)=x+S(0)=y+S(0)=S(y)$$ (I am using a [property of addition shown in the previous chapter](RecursiveDefinitions.md#examples)). Then, by [Peano axiom 2](WarmUp.md#definition-peano-axioms), $$x=y$$. Thus, to prove the lemma with induction, one simply needs to assume that it holds for some $$z\in{{N}}$$ and then show that it holds for $$S(z)$$. So suppose it holds for $$z$$ and suppose $$x+S(z)=y+S(z)$$. Then,
+**Proof**: Note that by the [definition of addition](RecursiveDefinitions.md#examples), the lemma is certainly true for $$z=0$$. In fact, the lemma is also true for $$z=S(0)$$: if $$x+S(0)=y+S(0)$$, then $$S(x)=x+S(0)=y+S(0)=S(y)$$ (I am using a [property of addition shown earlier](#reminder-on-a-property-of-addition)). Then, by [Peano axiom 2](WarmUp.md#definition-peano-axioms), $$x=y$$. Thus, to prove the lemma with induction, one simply needs to assume that it holds for some $$z\in{{N}}$$ and then show that it holds for $$S(z)$$. So suppose it holds for $$z$$ and suppose $$x+S(z)=y+S(z)$$. Then,
 $$
 \begin{aligned}
 (x+z)+S(0) &= x+(z+S(0)) \ \text{by associativity}\\
@@ -199,26 +204,26 @@ $$ So, just like before, one does induction on $$x$$:
 $$
 x \cdot y=S(x') \cdot S(y')=S(x') \cdot y'+S(x')=S(S(x') \cdot y'+x')
 $$
-by the [definitions of addition and multiplication alone](RecursiveDefinitions.md#examples). But then, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(S(x') \cdot y'+x') = x \cdot y \neq 0$$.
+by the [definitions of addition and multiplication alone](RecursiveDefinitions.md#examples). But then, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(S(x') \cdot y'+x')$$ cannot be $$0$$.
 
 
 ## Lemma CancMultiply
 
-**Multiplication is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$z \neq 0$$ and $$x \cdot z=y \cdot z$$, then $$x=y$$_.
+**Multiplication is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$z \neq 0$$ and $$z \cdot x=z \cdot x$$, then $$x=y$$_.
 
-**Proof**: Let $${{S}}=\{x\in{{N}}:\ \forall y,z\in{{N}}\ [\text{if}\ z \neq 0\ \text{and}\ x \cdot z=y \cdot z\text{, then}\ x=y]\}$$.
-1. To show $$0\in{{S}}$$, suppose that $$z \neq 0$$ and $$0 \cdot z=0=y \cdot z$$. But then by the [previous lemma](#lemma-nozdivs), $$y$$ must be $$0$$.
+**Proof**: Let $${{S}}=\{x\in{{N}}:\ \forall y,z\in{{N}}\ [\text{if}\ z \neq 0\ \text{and}\ z \cdot x=z \cdot y\text{, then}\ x=y]\}$$.
+1. To show $$0\in{{S}}$$, suppose that $$z \neq 0$$ and $$z \cdot 0=0=z \cdot y$$. But then by the [previous lemma](#lemma-nozdivs), $$y$$ must be $$0$$.
 2. Now, assume that $$x\in{{S}}$$. To show $$S(x)\in{{S}}$$ also, assume the hypothesis of the lemma i.e. suppose that $$z \neq 0$$ and that
 $$
-S(x) \cdot z=z \cdot S(x)=z \cdot x + z=x \cdot z + z=y \cdot z
+z \cdot S(x)=z \cdot x + z=z \cdot y
 $$
-Now, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(x) \neq 0$$. Since also, $$z \neq 0$$ by hypothesis, one has that $$y \neq 0$$; otherwise, $$S(x) \cdot z=y \cdot z=0$$ contradicting the previous lemma. Hence, by [Lemma ExPre](WarmUp.md#lemma-expre), there is a $$y'\in{{N}}$$ such that $$S(y')=y$$. So,
+Now, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(x) \neq 0$$. Since also, $$z \neq 0$$ by hypothesis, one has that $$y \neq 0$$; for otherwise, $$z \cdot S(x)=z \cdot y=z \cdot 0=0$$, contradicting the previous lemma. Hence, by [Lemma ExPre](WarmUp.md#lemma-expre), there is a $$y'\in{{N}}$$ such that $$S(y')=y$$. So,
 $$
-x \cdot z + z=y \cdot z=S(y') \cdot z=z \cdot S(y')=z \cdot y' + z=y' \cdot z + z
+z \cdot x + z=z \cdot y=z \cdot S(y')=z \cdot y' + z
 $$
-Now, by [additive cancellation](#lemma-cancadd), $$x \cdot z=y' \cdot z$$. But as $$x\in{{S}}$$ and $$z \neq 0$$, this means that $$x=y'$$, so that $$S(x)=S(y')=y$$ by [Peano axiom 2](WarmUp.md#definition-peano-axioms). This concludes the induction.
+Now, by [additive cancellation](#lemma-cancadd), $$z \cdot x=z \cdot y'$$. But as $$x\in{{S}}$$ and $$z \neq 0$$, this means that $$x=y'$$, so that $$S(x)=S(y')=y$$ by [Peano axiom 2](WarmUp.md#definition-peano-axioms). This concludes the induction.
 
-Note that because of [commutativity](#lemma-commutmultiply), one can also cancel from the left i.e. if $$z \cdot x=z \cdot y$$, then $$x=y$$.
+Note that because of [commutativity](#lemma-commutmultiply), one can also cancel from the right i.e. if $$x \cdot z=y \cdot z$$, then $$x=y$$.
 
 
 ## Remarks
