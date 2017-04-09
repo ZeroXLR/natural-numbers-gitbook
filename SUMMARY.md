@@ -4,4 +4,5 @@
 * [Warm Up](WarmUp.md)
 * [Recursive Definitions](RecursiveDefinitions.md)
 * [Addition and Multiplication](PropertiesAddAndMultiply.md)
-* [Order](PropertiesOrder.md)
+* [Order](PropertiesOrder/README.md)
+    * [Order Preservation](PropertiesOrder/OrderPreservation.md)
