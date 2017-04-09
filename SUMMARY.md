@@ -6,3 +6,4 @@
 * [Addition and Multiplication](PropertiesAddAndMultiply.md)
 * [Order](PropertiesOrder/README.md)
     * [Order Preservation](PropertiesOrder/OrderPreservation.md)
+* [The Family Fin](PropertiesFin.md)

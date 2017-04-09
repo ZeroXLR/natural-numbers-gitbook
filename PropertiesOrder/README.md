@@ -78,11 +78,22 @@ _For any $$x,y\in{{N}}$$, $$x+S(y)=S(x)+y$$_.
 **Strict Order**: Given two natural numbers $$x$$ and $$y$$, one says that $$x$$ is **strictly less** than $$y$$ iff $$x \leq y$$ and $$x \neq y$$. One denotes this as $$x<y$$.
 
 
+## Theorem Strict Transitivity
+
+**Strict Transitivity**: _For all $$x,y,z\in{{N}}$$, if $$x<y$$ and $$y<z$$, then $$x<z$$_.
+
+## Theorem Semi-Strict Transitivity
+
+**Strict Transitivity**: _For all $$x,y,z\in{{N}}$$, if either $$x \leq y$$ and $$y<z$$, or $$x<y$$ and $$y \leq z$$, then $$x<z$$_.
+
+> The proofs of these are easy. I leave them for the readers to fill in.
+
+
 ## Theorem TotalityAlt
 
 **Totality (Alternative Form)**: _For every $$x,y\in{{N}}$$, exactly one of $$x<y$$, $$x=y$$ or $$y<x$$ is true_.
 
-> The proof of this is very easy. All one has to do is to argue that if one of the cases happen, the other two cases cannot happen. That at least one of the cases happen is already guaranteed by the original theorem on totality.
+> The proof of this is also easy. All one has to do is to argue that if one of the cases happen, the other two cases cannot happen. That at least one of the cases happen is already guaranteed by the original theorem on totality.
 
 
 ## Interlude 1
