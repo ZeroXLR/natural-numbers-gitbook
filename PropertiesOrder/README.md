@@ -160,6 +160,8 @@ One has now shown that the natural numbers are totally ordered. Believe it or no
 
 **Proof Sketch**: If $$x<y$$, then there is a natural $$k'$$ such that $$x+S(k')=S(x)+k'=y$$ i.e. $$S(x) \leq y$$.
 
+> The above lemma is sometimes used in its contrapositive form: _For any $$x,y\in{{N}}$$, if not $$S(x) \leq y$$, then not $$x<y$$_. By alternative totality, this is equivalent to: _For any $$x,y\in{{N}}$$, if $$y<S(x)$$, then $$y \leq x$$_.
+
 
 ## Theorem Well-Ordering-Alt
 
