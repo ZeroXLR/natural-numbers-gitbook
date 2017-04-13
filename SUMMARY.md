@@ -7,4 +7,5 @@
 * [Order](PropertiesOrder/README.md)
     * [Well Ordering](PropertiesOrder/WellOrder.md)
     * [Order Preservation](PropertiesOrder/OrderPreservation.md)
-* [The Family Fin](PropertiesFin.md)
+* [The Family Fin](PropertiesFin/README.md)
+    * [Functions over Fin](PropertiesFin/FunctionsOverFin.md)
