@@ -25,9 +25,11 @@ Conversely, supposing $$x+z \leq y+z$$, by the the same sequence of equalities a
 
 ## Theorem MPO
 
-**Multiplication Preserves Order**: _For any $$x,y,z\in{{N}}$$, if $$x \leq y$$, then $$x \cdot z \leq y \cdot z$$_. _Also, if $$z \neq 0$$ and $$z \cdot x \leq z \cdot y$$, then $$x \leq y$$_.
+**Multiplication Preserves Order**: _For any $$x,y,z\in{{N}}$$, if $$x \leq y$$, then $$z \cdot x \leq z \cdot y$$_. _Also, if $$z \neq 0$$ and $$z \cdot x \leq z \cdot y$$, then $$x \leq y$$_.
 
-**Proof**: Suppose that $$x \leq y$$. Then, $$x+k=y$$ for some natural $$k$$. So, $$(x+k) \cdot z=x \cdot z+k \cdot z=y \cdot z$$ (by distributivity). Hence, $$x \cdot z \leq y \cdot z$$.
+**Proof**: Suppose that $$x \leq y$$. Then, $$x+k=y$$ for some natural $$k$$. So, $$
+z \cdot (x+k)=z \cdot x+z \cdot k=z \cdot y
+$$ by distributivity. Hence, $$z \cdot x \leq z \cdot y$$.
 
 Now for the reverse direction (along with $$z \neq 0$$), one needs induction on $$x$$:
 1. If $$x=0$$, then obviously $$x \leq y$$ because $$0$$ is the least natural number period.
@@ -40,7 +42,7 @@ Thus, $$z \cdot x \leq z \cdot y$$. So, by the inductive hypothesis, $$x \leq y$
 
 ## Corollary MPOStrict
 
-**Multiplication Preserves Strict Order**: _For any $$x,y,z\in{{N}}$$, where $$z \neq 0$$, $$x<y$$ iff $$x \cdot z<y \cdot z$$_.
+**Multiplication Preserves Strict Order**: _For any $$x,y,z\in{{N}}$$, where $$z \neq 0$$, $$x<y$$ iff $$z \cdot x<z \cdot y$$_.
 
 
 &nbsp;
