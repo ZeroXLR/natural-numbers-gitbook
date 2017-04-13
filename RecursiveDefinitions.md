@@ -1,4 +1,5 @@
 {% set N = "\\mathbb{N}" %}
+{% set U = "\\mathcal{U}" %}
 
 
 ## Manifesto
@@ -17,13 +18,15 @@ This is the basic procedure of defining a recursive function over $${{N}}$$. Fir
 * $$f(0)=x$$ _and_
 * $$f(S(n))=\varphi(f(n))$$.
 
-**Proof**: Consider the class $${{F}}$$ of all subsets of $${{N}} \times X$$ that satisfy the two conditions above i.e.
+**Proof**: Consider the set $${{F}}$$ of all subsets of $${{N}} \times X$$ that satisfy the two conditions above i.e.
 $$
 {{F}} = \{F \subseteq {{N}} \times X:\ (0,x) \in F \ \ \text{and}\ \ (S(n),\varphi(F_n)) \in F \ \text{if}\ (n,F_n) \in F\}
 $$
 This class is non-empty because obviously the entire product set $${{N}} \times X$$ itself satisfies both of the conditions of $${{F}}$$.
 
-Now, define $$f$$ to be the intersection of all the $$F$$'s in $${{F}}$$ i.e. $$f=\bigcap{{F}}=\{p:\ F\in{{F}}\ \text{implies}\ p \in F\}$$. This is a valid set because $${{F}}$$ is non-empty; otherwise, one ends up with the bizarre consequence that $$f$$ is the universal class which is not a set. Also, since every element in $${{F}}$$ satisfies both the conditions in the theorem, so must $$f$$ satisfy both conditions of the theorem.
+Now, define $$f$$ to be the intersection of all the $$F$$'s in $${{F}}$$ i.e. $$
+f=\bigcap{{F}}=\{p\in{{U}}:\ F\in{{F}}\ \text{implies}\ p \in F\}
+$$ where $${{U}}$$ is the universal class that contains all sets (and is not a set itself). $$f$$, thus defined, is a valid set because $${{F}}$$ is non-empty; otherwise, one ends up with the bizarre consequence that $$f$$ is $${{U}}$$ itself which is not a set. Also, since every element in $${{F}}$$ satisfies both the conditions in the theorem, so must $$f$$ satisfy both conditions of the theorem.
 
 Next, one must show that $$f$$ is many-to-one i.e. it maps the same value to at most one value. This is substantially harder to show compared to the properties shown in the previous paragraph. Essentially, one has to show that if $$n\in{{N}}$$ and $$y,y' \in X$$ and $$(n,y), (n,y') \in f$$, then $$y = y'$$. This can be accomplished using induction:
 
@@ -42,7 +45,7 @@ This completes the induction to show that $$f$$ is many-to-one.
 
 To complete the demonstration that $$f$$ is a function, one still needs to show that the domain and codomain of $$f$$ are $${{N}}$$ and $$X$$ respectively. Since the proofs needed for both are quite similar, I only demonstrate the fact that $$f$$'s domain is $${{N}}$$ i.e. that
 $$
-\text{dom}f=\{n:\ \exists \chi \in X\ [(n,\chi) \in f]\}={{N}}
+\text{dom}f=\{n\in{{U}}:\ \exists \chi \in X\ [(n,\chi) \in f]\}={{N}}
 $$
 Well, certainly, since $$f\subseteq{{N}} \times X$$, $$\text{dom}f\subseteq{{N}}$$. Now, clearly $$0\in\text{dom}f$$ since $$(0,x) \in f$$. Also, if $$n\in\text{dom}f$$, then there is a $$\chi$$ such that $$(n,\chi) \in f$$; hence, $$(S(n),\varphi(\chi)) \in f$$ so that $$S(n) \in f$$. Thus, by induction, $${{N}}\subseteq\text{dom}f$$.
 
@@ -63,7 +66,13 @@ Finally, I show that $$f$$ is unique. To begin with, assume that there is anothe
 
 The two theorems just seen are among the most powerful in this book. They allow one to construct all the basic algebraic and order structure of $${{N}}$$:
 
-* **Addition**: In [Theorem RecDef0](#theorem-recdef0), let $$X$$ be $${{N}}$$, $$x$$ be any natural number and $$\varphi$$ be the successor function $$S$$ itself. Then, the theorem says that to every choice of $$x$$ as above, there corresponds a unique function $$A_x:{{N}}\to{{N}}$$ such that $$A_x(0)=x$$ and $$A_x(S(y))=S(A_x(y))$$. Now, one can easily define the infix function $$+:{{N}}\times{{N}}\to{{N}}$$ to be $$x+y=A_x(y)$$ for any $$x,y\in{{N}}$$. In the view of this function, the conditions $$A_x(0)=x$$ and $$A_x(S(y))=S(A_x(y))$$ become $$x+0=x$$ and $$x+S(y)=S(x+y)$$ respectively. From this and the fact that $$S$$ maps equals to equals, it is easy to see that $$x+S(0)=S(x+0)=S(x)$$. Denoting $$S(0)$$ as $$1$$, this becomes $$x+1=S(x)$$.
-* **Multiplication**: In [Theorem RecDef1](#theorem-recdef1), choose $${{N}}$$, $$0$$ and addition ($$+$$) to be the raw materials for constructing multiplication. Then, the theorem says that to every $$x\in{{N}}$$ there corresponds a unique function $$M_x:{{N}}\to{{N}}$$ such that $$M_x(0)=0$$ and $$M_x(S(y))=M_x(y)+x$$. Now, one can define the infix function $$\cdot:{{N}}\times{{N}}\to{{N}}$$ as $$x \cdot y = M_x(y)$$ for every $$x,y\in{{N}}$$. Hence, $$x \cdot 0 = 0$$ and $$x\cdot(y+1)=x \cdot y + x$$ (assuming $$\cdot$$ has higher precedence than $$+$$ i.e. $$x \cdot y + x=(x \cdot y) + x$$).
-* **Partial Order**: The order that I am about to define follows indirectly from the recursion theorems as a by-product of addition. More concretely, define the $${{N}}$$-relation (i.e. subset of $${{N}}\times{{N}}$$), $$\leq$$, thus: $$(x,y)\in\ \leq$$ iff $$\exists n\in{{N}}\ [x+n=y]$$. One often writes $$(x,y)\in\ \leq$$ in infix form: $$x \leq y$$. It is easy to see that this definition is at least **reflexive**: $$x \leq x$$ since $$x+0=x$$. Verifying the other two properties of a partial order will have to wait.
-* **The Family of Sets $$\text{Fin}$$**: In [Theorem RecDef1](#theorem-recdef1), choose $$\mathcal{P}{{N}}=\{\Sigma:\Sigma\subseteq{{N}}\}$$, $$\emptyset$$ and $$\text{append}:\mathcal{P}{{N}}\times{{N}}\ni(\Sigma,n)\mapsto\Sigma\cup\{n\}\in\mathcal{P}{{N}}$$ to be the raw materials for constructing this family. Then, the theorem says that there is a unique function $$\text{Fin}:{{N}}\to\mathcal{P}{{N}}$$ such that $$\text{Fin}(0)=\emptyset$$ and $$\text{Fin}(S(n))=\text{Fin}(n)\ \text{append}\ n$$. Later, it will be shown that $$\text{Fin}(n)$$ is precisely the set of all natural numbers strictly less than $$n$$.
+* **Addition**: In [Theorem RecDef0](#theorem-recdef0), let $$X$$ be $${{N}}$$, $$x$$ be any natural number and $$\varphi$$ be the successor function $$S$$ itself. Then, the theorem says that to every choice of $$x$$ as above, there corresponds a unique function $$A_x:{{N}}\to{{N}}$$ such that $$A_x(0)=x$$ and $$A_x(S(y))=S(A_x(y))$$. Now, one can easily define the infix-function $$+:{{N}}\times{{N}}\to{{N}}$$ to be $$x+y=A_x(y)$$ for any $$x,y\in{{N}}$$. In the view of this function, the conditions $$A_x(0)=x$$ and $$A_x(S(y))=S(A_x(y))$$ become $$x+0=x$$ and $$x+S(y)=S(x+y)$$ respectively. From this and the fact that $$S$$ maps equals to equals, it is easy to see that $$x+S(0)=S(x+0)=S(x)$$. Denoting $$S(0)$$ as $$1$$, this becomes $$x+1=S(x)$$.
+* **Multiplication**: In [Theorem RecDef1](#theorem-recdef1), choose $${{N}}$$, $$0$$ and addition ($$+$$) to be the raw materials for constructing multiplication. Then, the theorem says that to every $$x\in{{N}}$$ there corresponds a unique function $$M_x:{{N}}\to{{N}}$$ such that $$M_x(0)=0$$ and $$M_x(S(y))=M_x(y)+x$$. Now, one can define the infix-function $$\cdot:{{N}}\times{{N}}\to{{N}}$$ as $$x \cdot y = M_x(y)$$ for every $$x,y\in{{N}}$$. Hence, $$x \cdot 0 = 0$$ and $$x\cdot(y+1)=x \cdot y + x$$ (assuming $$\cdot$$ has higher precedence than $$+$$ i.e. $$x \cdot y + x=(x \cdot y) + x$$).
+* **Exponentiation**: In [Theorem RecDef1](#theorem-recdef1), choose $${{N}}$$, $$S(0)$$ and multiplication ($$\cdot$$) to be the raw materials for constructing exponentiation. Then, the theorem says that to every $$x\in{{N}}$$ there corresponds a unique function $$E_x:{{N}}\to{{N}}$$ such that $$E_x(0)=S(0)$$ and $$E_x(S(y))=E_x(y) \cdot x$$. Now, one can define the placeholder-function $$\square^\square:{{N}}\times{{N}}\to{{N}}$$ as $$x^y = E_x(y)$$ for every $$x,y\in{{N}}$$. Hence, $$x^0 = 1$$ and $$x^{y+1}=x^y \cdot x$$ (assuming $$\square^\square$$ has higher precedence than $$\cdot$$).
+* **Factorial**: In [Theorem RecDef1](#theorem-recdef1), choose $${{N}}$$, $$S(0)$$ and the placeholder-function $$
+- \cdot S(-):{{N}}\times{{N}}\ni(n,n') \mapsto n \cdot S(n')\in{{N}}
+$$ to be the raw materials for constructing exponentiation. Then, there is a unique postfix-function $$!:{{N}}\to{{N}}$$ such that $$0!=S(0)$$ and $$S(y)!=y! \cdot S(y)$$ (assuming $$!$$ has higher precedence than $$\cdot$$).
+* **Partial Order**: The order that I am about to define follows indirectly from the recursion theorems as a by-product of addition. More concretely, define the $${{N}}$$-relation (i.e. subset of $${{N}}\times{{N}}$$), $$\leq$$, thus: $$(x,y)\in\ \leq$$ iff $$\exists n\in{{N}}\ [x+n=y]$$. One often writes $$(x,y)\in\ \leq$$ in infix-form: $$x \leq y$$. It is easy to see that this definition is at least **reflexive**: $$x \leq x$$ since $$x+0=x$$. Verifying the other two properties of a partial order will have to wait.
+* **The Family of Sets $$\text{Fin}$$**: In [Theorem RecDef1](#theorem-recdef1), choose $$\mathcal{P}{{N}}=\{\Sigma\in{{U}}:\Sigma\subseteq{{N}}\}$$, $$\emptyset$$ and the infix-function $$
+\text{append}:\mathcal{P}{{N}}\times{{N}}\ni(\Sigma,n)\mapsto\Sigma\cup\{n\}\in\mathcal{P}{{N}}
+$$ to be the raw materials for constructing this family. Then, the theorem says that there is a unique function $$\text{Fin}:{{N}}\to\mathcal{P}{{N}}$$ such that $$\text{Fin}(0)=\emptyset$$ and $$\text{Fin}(S(n))=\text{Fin}(n)\ \text{append}\ n$$. Later, it will be shown that $$\text{Fin}(n)$$ is precisely the set of all natural numbers strictly less than $$n$$.

@@ -84,7 +84,7 @@ _For any $$x,y\in{{N}}$$, $$x+S(y)=S(x)+y$$_.
 
 ## Theorem Semi-Strict Transitivity
 
-**Strict Transitivity**: _For all $$x,y,z\in{{N}}$$, if either $$x \leq y$$ and $$y<z$$, or $$x<y$$ and $$y \leq z$$, then $$x<z$$_.
+**Semi-Strict Transitivity**: _For all $$x,y,z\in{{N}}$$, if either $$x \leq y$$ and $$y<z$$, or $$x<y$$ and $$y \leq z$$, then $$x<z$$_.
 
 > The proofs of these are easy. I leave them for the readers to fill in.
 

@@ -1,4 +1,9 @@
+{% set N = "\\mathbb{N}" %}
+{% set S = "\\Sigma" %}
+
+
 > I end the exploration of order by showing two small but important results: it will be shown that addition and multiplication preserve order.
+
 
 ## Theorem APO
 
@@ -11,6 +16,11 @@ $$
 So, $$x+z \leq y+z$$.
 
 Conversely, supposing $$x+z \leq y+z$$, by the the same sequence of equalities as above (except in reverse), one has that for some natural $$k$$, $$(x+k)+z=y+z$$. Then, by cancellation, one has that $$x+k=y$$ i.e. $$x \leq y$$.
+
+
+## Corollary APOStrict
+
+**Addition Preserves Strict Order**: _For any $$x,y,z\in{{N}}$$, $$x<y$$, iff $$x+z<y+z$$_.
 
 
 ## Theorem MPO
@@ -28,5 +38,10 @@ $$
 Thus, $$z \cdot x \leq z \cdot y$$. So, by the inductive hypothesis, $$x \leq y$$. Now, since $$z \neq 0$$, it cannot have inverses. Therefore, $$z+k \neq 0$$, so that $$z \cdot x \neq z \cdot y$$ by (the contrapositive of) cancellation. Thus, $$x \neq y$$; otherwise, multiplication being a function, $$z \cdot x$$ would have equaled $$z \cdot y$$. Hence, $$x<y$$. But then, as $$S(x)$$ is the least element strictly greater than $$x$$, $$S(x) \leq y$$, which was to be shown.
 
 
+## Corollary MPOStrict
+
+**Multiplication Preserves Strict Order**: _For any $$x,y,z\in{{N}}$$, where $$z \neq 0$$, $$x<y$$ iff $$x \cdot z<y \cdot z$$_.
+
+
 &nbsp;
-> Of course, in both theorems above, one can change whether $$z$$ adds/multiplies from the left or the right by commutativity.
+> Of course, in all the theorems and corollaries above, one can change whether $$z$$ adds/multiplies from the left or the right by commutativity.
