@@ -27,9 +27,11 @@
     * If $$l \neq n$$, then $$l \in X$$. It is easy to see in this case that $$l$$ is the least element of $$X$$. For, fix any $$s \in X$$; then certainly $$s \in X'$$ also. But then as $$l$$ is the least element of $$X'$$, $$l \leq s$$.
     * Otherwise, $$l=n$$. In this case, one can show that $$S(n)$$ is the least element of $$X$$. Well, for starters, fix any $$s \in X$$. Since $$s \in X'$$ also and $$l=n$$ is the least element of $$X'$$, $$n \leq s$$ i.e. there is some $$k\in{{N}}$$ such that $$n+k=s$$. Now, $$k \neq 0$$ as otherwise, $$s=n+0=n\notin{{N}}$$. Thus, there is a $$k'\in{{N}}$$ such that $$S(k')=k$$. So, $$s=n+k=n+S(k')=S(n)+k'$$ (using [Lemma SSwap](README.md#lemma-sswap)). Hence, $$S(n) \leq s$$.
 
+Because least elements are unique by the [previous lemma](#lemma-ule), one can unambiguously denote the least element of $$X$$, as given by this theorem, as $$\text{min}(X)$$.
+
 
 &nbsp;
-> One can also flesh out well-ordering in terms of the existence of **greatest elements** in **bounded** subsets of $${{N}}$$.
+> One can also flesh out well-ordering in terms of **greatest elements** in **bounded** subsets of $${{N}}$$.
 
 
 ## Definition GE

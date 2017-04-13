@@ -23,6 +23,15 @@ Putting both of this together, one has that $${{F}}(S(n))=\{x\in{{N}}:\ x<S(n)\}
 This is a important result and it is, henceforth, assumed implicitly in the rest of this book.
 
 
+## Corollary FkSSFn
+
+_If $$n,k\in{{N}}$$ such that $$k<n$$, then $${{F}}(k)\subset{{F}}(n)$$_.
+
+**Proof**: Let $$x\in{{F}}(k)$$. Then, by the theorem above, $$x\in{{N}}$$ and $$x<k$$, so that, by strict transitivity and $$k<n$$, $$x<n$$. Hence, $$x\in{{F}}(n)$$. Thus, one has that $${{F}}(k)\subseteq{{F}}(n)$$.
+
+At the same time, note that $$k\in{{F}}(n)$$ since $$k<n$$. However, obviously $$k=k$$, so that $$k<k$$ is impossible by alternative totality; thus, $$k\notin{{F}}(k)$$. So, it is not the case that $${{F}}(n)\subseteq{{F}}(k)$$. Along with the result from the previous paragraph, this implies that $${{F}}(k)\subset{{F}}(n)$$.
+
+
 &nbsp;
 > Now I turn to an alternative characterization of induction using $${{F}}$$. This principle of induction is often termed **strong induction** while the usual one, characterized by [Peano axiom 4](../WarmUp.md#definition-peano-axioms), is called **weak induction**. This is somewhat ironic considering the fact that one can derive strong induction from weak induction, as I am about to do. The reason that strong induction is considered "strong" is because its _inductive hypothesis_ is indeed logically stronger as one shall see:
 
@@ -41,4 +50,15 @@ to first show that for every $$x\in{{N}}$$, $${{F}}(x)\subseteq{{S}}$$.
 
 Hence, by normal induction, for any given natural $$x$$, $${{F}}(x)\subseteq{{S}}$$; finally, using the condition in the theorem, on this result, yields that the given $$x$$ is in $${{S}}$$. Hence, $${{N}}\subseteq{{S}}$$.
 
-> The above theorem is often stated in terms of properties: if $$\phi$$ is an unary property such that $$\phi(0)$$ is true and for every $$n\in{{N}}$$, if $$\phi(k)$$ being true for all $$k\in{{N}}$$ such that $$k<n$$ implies $$\phi(n)$$ being true, then $$\phi$$ is true for all of $${{N}}$$.
+The above theorem is often stated in terms of properties: if $$\phi$$ is an unary property such that $$\phi(0)$$ is true and for every $$n\in{{N}}$$, if $$\phi(k)$$ being true for all $$k\in{{N}}$$ such that $$k<n$$ implies $$\phi(n)$$ being true, then $$\phi$$ is true for all of $${{N}}$$.
+
+
+&nbsp;
+> I next present a lemma which, while simple, is used often in the main lemma of the next section. So, it is worth spelling it out completely:
+
+
+## Lemma SFSxWSFx
+
+**Subset of $${{F}}(S(n))$$ Without $$n$$ is Subset of $${{F}}(n)$$**: _For any $$U\subseteq{{F}}(S(n))$$ such that $$n \notin U$$, $$U\subseteq{{F}}(n)$$_.
+
+**Proof**: Fix any $$u \in U$$. Then, since $$n \notin U$$, $$u \neq n$$. At the same time, since $$U\subseteq{{F}}(S(n))$$, $$u\in{{F}}(S(n))$$ i.e. $$u\in{{N}}$$ and $$u<S(n)$$; thus, by a lemma from the previous chapter, $$u \leq n$$. So, altogether, $$u \leq n$$ and $$u \neq n$$ i.e. $$u<n$$. Hence, $$u\in{{F}}(n)$$. Since the previous argument is true for arbitrary $$u$$, $$U\subseteq{{F}}(n)$$.
