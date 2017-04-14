@@ -17,7 +17,7 @@
 
 ## Lemma ISSI
 
-**Image of a Subset is a Subset of the Image**: _For any function $$f:X \to Y$$ and $$U \subseteq X$$, $$f(U) \subseteq Y$$. Furthermore, if $$f$$ is injective and $$U$$ is a strict subset of $$X$$, then $$f(U)$$ is a strict subset of $$Y$$_.
+**Image of a Subset is a Subset of the Image**: _For any function $$f:X \to Y$$ and $$U \subseteq X$$, $$f(U) \subseteq Y$$_. _Furthermore, if $$f$$ is injective and $$U$$ is a strict subset of $$X$$, then $$f(U)$$ is a strict subset of $$Y$$_.
 
 **Proof**: Let $$y \in f(U)$$. Then, there is some $$u \in U$$ such that $$f(u)=y$$. But, $$u \in X$$ also, so that $$y=f(u) \in Y$$. Hence, $$f(U) \subseteq Y$$.
 
@@ -26,7 +26,7 @@ Now, suppose that $$f$$ is injective and $$U \subset X$$. Then, there is some $$
 
 ## Lemma BFSxRBFx
 
-**Bijection from $${{F}}(S(n))$$ to Subset Restricts to Bijection from $${{F}}(n)$$ to Subset**: _For any $$n\in{{N}}$$, suppose $$f:{{F}}(S(n)) \to X$$ is a bijection where $$X\subseteq{{F}}(S(n))$$. Then, there exists a bijection $$f':{{F}}(n) \to X'$$ where $$X'\subseteq{{F}}(n)$$. Furthermore, if $$X$$ is a strict subset of $${{F}}(S(n))$$, then $$X'$$ is a strict subset of $${{F}}(n)$$_.
+**Bijection from $${{F}}(S(n))$$ to Subset Restricts to Bijection from $${{F}}(n)$$ to Subset**: _For any $$n\in{{N}}$$, suppose $$f:{{F}}(S(n)) \to X$$ is a bijection where $$X\subseteq{{F}}(S(n))$$_. _Then, there exists a bijection $$f':{{F}}(n) \to X'$$ where $$X'\subseteq{{F}}(n)$$_. _Furthermore, if $$X$$ is a strict subset of $${{F}}(S(n))$$, then $$X'$$ is a strict subset of $${{F}}(n)$$_.
 
 **Proof**: There are two cases to consider:
 
@@ -68,7 +68,7 @@ Thus, in both cases, $$x \neq x'$$ implies $$f'(x) \neq f'(x')$$ i.e. $$f'$$ is 
 
 ## Theorem NBFPS
 
-_There Exist No Bijections from $${{F}}(n)$$ to a Proper Subset of it_.
+_There exist no bijections from $${{F}}(n)$$ to a proper subset of it_.
 
 **Proof**: Do induction on $$n\in{{N}}$$:
 1. $${{F}}(0)={{E}}$$ has no proper subsets. So, in fact, it is impossible to have functions, let alone bijections, from $${{F}}(0)$$ to a proper subset of it.
@@ -77,22 +77,29 @@ _There Exist No Bijections from $${{F}}(n)$$ to a Proper Subset of it_.
 > Rephrasing the above theorem a little bit, one gets the following: if there is a bijection from $${{F}}(n)$$ to a subset of itself, then that subset is the whole of $${{F}}(n)$$.
 
 
-## Corollary NBFnFk
+## Corollary NoBijFnFk
 
-_There Exist No Bijections from $${{F}}(n)$$ to $${{F}}(k)$$ where $$k<n$$_.
+_There exist no bijections from $${{F}}(n)$$ to $${{F}}(k)$$ where $$k<n$$_.
 
-**Proof**: $${{F}}(k)$$ is a proper subset of $${{F}}(n)$$ by [Corollary FkSSFn](README.md#corollary-fkssfn); the result now follows immediately by applying the above theorem to this fact.
+**Proof**: By [Corollary FkSSFn](README.md#corollary-fkssfn), if $$k<n$$, then $${{F}}(k)\subset{{F}}(n)$$. Now apply the theorem above.
 
 
 ## Corollary ifInjthenBij
 
-_If $$f:{{F}}(n) \to Y\subseteq{{F}}(n)$$ is an injection, then it is also a surjection (and, thus, a bijection)_.
+_If $$f:{{F}}(n) \to Y\subseteq{{F}}(n)$$ is an injection, then it is also a surjection (thus, a bijection) and, in fact, $$Y={{F}}(n)$$_.
 
 **Proof**: By [Lemma RSIS](#lemma-rsis), restricting $$f$$'s codomain to $$f({{F}}(n))$$ produces a bijection. So, by the [previous theorem](#theorem-nbfps), it must be that $$f({{F}}(n))={{F}}(n)$$. But then, by [Lemma ISSI](#lemma-issi), $${{F}}(n)=f({{F}}(n)) \subseteq Y$$. Hence, $$Y={{F}}(n)$$ (as $$Y\subseteq{{F}}(n)$$ by hypothesis), so that $$f({{F}}(n))=Y$$. But this means precisely that $$f$$ is surjective.
 
 
+## Corollary FnFkInjthenSurj
+
+_If there is an injection from $${{F}}(n)$$ to $${{F}}(k)$$ where $$k \leq n$$, then it also a surjection and, in fact, $$k=n$$_.
+
+**Proof**: As $$k \leq n$$, $${{F}}(k)$$ is a subset of $${{F}}(n)$$ by [Corollary FkSFn](README.md#corollary-fksfn). Now, applying [Corollary ifInjthenBij](#corollary-ifinjthenbij) to the given injection immediately yields $${{F}}(k)={{F}}(n)$$ and the fact that this injection is also surjection. Finally, as $${{F}}(k)={{F}}(n)$$, by [Corollary FinInj](README.md#corollary-fininj), $$k=n$$.
+
+
 &nbsp;
-> There is also a surjective analog of the above corollary. For that one needs an additional concept from informal set theory. Recall that for any function $$f:X \to Y$$, one has the set $$
+> There is also a surjective analog of [Corollary ifInjthenBij](#corollary-ifinjthenbij). For that one needs an additional concept from informal set theory. Recall that for any function $$f:X \to Y$$, one has the set $$
 f^{-1}(y)=\{x \in X:\ f(x)=y\} \subseteq X
 $$ given any $$y \in Y$$. Thus, $$f$$ being surjective means precisely that $$f^{-1}(y)\neq{{E}}$$ for any $$y \in Y$$.
 

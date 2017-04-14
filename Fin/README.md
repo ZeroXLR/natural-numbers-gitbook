@@ -25,11 +25,25 @@ This is a important result and it is, henceforth, assumed implicitly in the rest
 
 ## Corollary FkSSFn
 
-_If $$n,k\in{{N}}$$ such that $$k<n$$, then $${{F}}(k)\subset{{F}}(n)$$_.
+_For $$n,k\in{{N}}$$, $$k<n$$ iff $${{F}}(k)\subset{{F}}(n)$$_.
 
-**Proof**: Let $$x\in{{F}}(k)$$. Then, by the theorem above, $$x\in{{N}}$$ and $$x<k$$, so that, by strict transitivity and $$k<n$$, $$x<n$$. Hence, $$x\in{{F}}(n)$$. Thus, one has that $${{F}}(k)\subseteq{{F}}(n)$$.
+**Proof**: Let $$x\in{{F}}(k)$$. Then, by the theorem above, $$x\in{{N}}$$ and $$x<k$$, so that, by strict transitivity and $$k<n$$, $$x<n$$. Hence, $$x\in{{F}}(n)$$. Thus, one has that $${{F}}(k)\subseteq{{F}}(n)$$. At the same time, note that $$k\in{{F}}(n)$$ since $$k<n$$. However, obviously $$k=k$$, so that $$k<k$$ is impossible by alternative totality; thus, $$k\notin{{F}}(k)$$. So, it is not the case that $${{F}}(n)\subseteq{{F}}(k)$$. Along with the result from the previous paragraph, this implies that $${{F}}(k)\subset{{F}}(n)$$.
 
-At the same time, note that $$k\in{{F}}(n)$$ since $$k<n$$. However, obviously $$k=k$$, so that $$k<k$$ is impossible by alternative totality; thus, $$k\notin{{F}}(k)$$. So, it is not the case that $${{F}}(n)\subseteq{{F}}(k)$$. Along with the result from the previous paragraph, this implies that $${{F}}(k)\subset{{F}}(n)$$.
+Conversely, suppose $${{F}}(k)\subset{{F}}(n)$$. Then, there exists an $$x$$ in $${{F}}(n)$$ that is not in $${{F}}(k)$$. Hence, $$x<n$$ but not $$x<k$$. By applying alternative totality to the latter, one gets that $$k \leq x$$. And, by applying semi-strict transitivity to $$k \leq x$$ and $$x<n$$, one gets that $$k<n$$, which was to be proven.
+
+
+## Corollary FinInj
+
+**$${{F}}$$ is Injective**: _For $$n,k\in{{N}}$$, $$k=n$$ iff $${{F}}(k)={{F}}(n)$$_.
+
+**Proof**: The forward direction is clear from the fact that $${{F}}$$ is a function that maps equals to equals. For the other direction, if $${{F}}(k)={{F}}(n)$$, then, every element in $${{F}}(k)$$ must be in $${{F}}(n)$$ and vice versa. Thus, it is neither the case that $${{F}}(k)\subset{{F}}(n)$$ nor the case that $${{F}}(n)\subset{{F}}(k)$$. Hence, by the corollary above, it is neither the case that $$k<n$$ nor the case that $$n<k$$. So, by alternative totality, $$k=n$$.
+
+&nbsp;
+> Combining the two corollaries above immediately yields:
+
+## Corollary FkSFn
+
+_For $$n,k\in{{N}}$$, $$k \leq n$$ iff $${{F}}(k)\subseteq{{F}}(n)$$_.
 
 
 &nbsp;
