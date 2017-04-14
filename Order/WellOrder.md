@@ -78,3 +78,5 @@ Because least elements are unique by the [previous lemma](#lemma-ule), one can u
 If $$l=0$$, since $$0$$ is the least element period, for any $$x \in X$$, $$l \leq x$$. Hence, by antisymmetry, $$x=l$$. Now, as $$X$$ is non-empty, there is at least one natural $$x \in X$$ and by the previous sentence, $$l=x \in X$$.
 
 Otherwise, $$l \neq 0$$. Hence, there is some $$l' \in {{N}}$$ such that $$S(l')=l$$. Since $$l'<S(l')$$ ($$l' \neq S(l')$$ as $$S$$ has no fixed points and $$l' \leq S(l')$$ by an earlier lemma), it cannot be that $$l=S(l') \leq l'$$ by alternative totality. Hence, $$l' \notin X'$$; otherwise, $$l$$ would no longer be the least element of $$X'$$. Thus, $$l'$$ is not an upper bound on $$X$$. In other words, there is an $$x \in X$$ such that $$x \leq l'$$ is not true; hence, $$l'<x$$ by alternative totality. So, by the previous lemma, $$l=S(l') \leq x$$. But then, by antisymmetry, $$l=x \in X$$.
+
+Because greatest elements are unique by the [Lemma UGE](#lemma-uge), one can unambiguously denote the greatest element of $$X$$, as given by this theorem, as $$\text{max}(X)$$.
