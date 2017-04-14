@@ -81,8 +81,6 @@ _There exist no bijections from $${{F}}(n)$$ to a proper subset of it_.
 
 _There exist no bijections from $${{F}}(n)$$ to $${{F}}(k)$$ where $$k<n$$_.
 
-**Proof**: By [Corollary FkSSFn](README.md#corollary-fkssfn), if $$k<n$$, then $${{F}}(k)\subset{{F}}(n)$$. Now apply the theorem above.
-
 
 ## Corollary ifInjthenBij
 
@@ -94,8 +92,6 @@ _If $$f:{{F}}(n) \to Y\subseteq{{F}}(n)$$ is an injection, then it is also a sur
 ## Corollary FnFkInjthenSurj
 
 _If there is an injection from $${{F}}(n)$$ to $${{F}}(k)$$ where $$k \leq n$$, then it also a surjection and, in fact, $$k=n$$_.
-
-**Proof**: As $$k \leq n$$, $${{F}}(k)$$ is a subset of $${{F}}(n)$$ by [Corollary FkSFn](README.md#corollary-fksfn). Now, applying [Corollary ifInjthenBij](#corollary-ifinjthenbij) to the given injection immediately yields $${{F}}(k)={{F}}(n)$$ and the fact that this injection is also surjection. Finally, as $${{F}}(k)={{F}}(n)$$, by [Corollary FinInj](README.md#corollary-fininj), $$k=n$$.
 
 
 &nbsp;
