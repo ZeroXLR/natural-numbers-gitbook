@@ -68,6 +68,27 @@ The above theorem is often stated in terms of properties: if $$\phi$$ is an unar
 
 
 &nbsp;
+> One can also do induction over each $${{F}}(n)$$ instead of over the whole of $${{N}}$$ itself. One can use this, for instance, to show properties about natural numbers within a bounded range.
+
+
+## Theorem InductionFin
+
+**Finite Induction**: _Fix any $$n\in{{N}}$$_. _Now suppose $${{S}}$$ is a set such that_:
+
+* _$$0\in{{S}}$$_
+* _$$x\in{{S}}$$ and $$S(x)<n$$ imply $$S(x)\in{{S}}$$_
+
+_Then $${{F}}(n)\subseteq{{S}}$$_.
+
+**Proof**: Fix a natural $$n$$ and a set $${{S}}$$ that satisfies the hypotheses of the theorem. I will now show that $${{F}}(n)\subseteq{{S}}$$. However, I will do so, in a slightly round-about way: I will show, in fact, that for all $$y\in{{N}}$$, if $$y\in{{F}}(n)$$, then $$y\in{{S}}$$. This rephrasing of $${{F}}(n)\subseteq{{S}}$$ allows me to do normal induction on $$y$$:
+
+1. By the hypotheses, $$0\in{{S}}$$. So, the consequent being true, the implication, "if $$0\in{{F}}(n)$$, then $$0\in{{S}}$$" is always true.
+2. Now suppose that the implication holds for some $$y$$. To show now that the implication holds for $$S(y)$$, assume the antecedent of the implication: $$S(y)\in{{F}}(n)$$; thus, $$S(y)<n$$. Now, since $$y<S(y)$$, one also has that $$y<n$$ (via transitivity), so that $$y\in{{F}}(n)$$. Hence, since the implication holds for $$y$$, it must be that $$y\in{{S}}$$. In summary then, $$y\in{{S}}$$ and $$S(y)<n$$. So, given that $${{S}}$$ satisfies the hypotheses of the theorem, $$S(y)\in{{S}}$$.
+
+This completes the induction. As usual, one can state this result in terms of properties. Fix an $$n\in{{N}}$$. If $$\phi$$ is an unary property such that $$\phi(0)$$ is true and, for $$x\in{{N}}$$, if $$\phi(x)$$ and $$S(x)<n$$ being true implies $$\phi(S(x))$$ being true, then $$\phi$$ is true for all of $${{F}}(n)$$.
+
+
+&nbsp;
 > I next present a lemma which, while simple, is used often in the main lemma of the next section. So, it is worth spelling it out completely:
 
 
