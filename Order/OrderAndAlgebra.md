@@ -66,7 +66,7 @@ The reader can proceed to investigate various algebraic properties of this defin
 
 ## Definition LimitedDivision
 
-Limited division comes in two forms: one form is floored while the other form is ceiling-ed. First, for any $$x,y\in{{N}}$$ **with $$y \neq 0$$**, define $$L_{x/y}=\{p\in{{N}}:\ y \cdot p \leq x\}$$ and $$U_{x/y}=\{p\in{{N}}:\ x \leq y \cdot p\}$$. I leave it to the readers to check that both of these sets are always non-empty and that, in the case of former set $$L_{x/y}$$, it is bounded above (**$$y \neq 0$$ is crucial for showing this!**). Hence, by the two forms of well-ordering, one can respectively define:
+Limited division comes in two forms: one form is floored while the other form is ceiling-ed. First, for any $$x,y\in{{N}}$$ **with $$y \neq 0$$**, define $$L_{x/y}=\{p\in{{N}}:\ y \cdot p \leq x\}$$ and $$U_{x/y}=\{p\in{{N}}:\ x \leq y \cdot p\}$$. I leave it to the readers to check that both of these sets are always non-empty and that, in the case of $$L_{x/y}$$, it is bounded above (**$$y \neq 0$$ is crucial for showing this!**). Hence, by the two forms of well-ordering, one can respectively define:
 
 * $$\lfloor\square/\square\rfloor:{{N}}\times({{N}}\setminus\{0\})\ni(x,y)\mapsto\text{max}(L_{x/y})\in{{N}}$$
 * $$\lceil\square/\square\rceil:{{N}}\times({{N}}\setminus\{0\})\ni(x,y)\mapsto\text{min}(U_{x/y})\in{{N}}$$
