@@ -8,4 +8,5 @@
     * [Well Order](Order/WellOrder.md)
     * [Order and Algebra](Order/OrderAndAlgebra.md)
 * [The Family Fin](Fin/README.md)
-    * [Functions over Fin](Fin/FunctionsOverFin.md)
+    * [Functions over Fin I](Fin/FunctionsOverFinI.md)
+	* [Functions over Fin II](Fin/FunctionsOverFinII.md)

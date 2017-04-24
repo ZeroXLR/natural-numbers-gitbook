@@ -86,14 +86,3 @@ _Then $${{F}}(n)\subseteq{{S}}$$_.
 2. Now suppose that the implication holds for some $$y$$. To show now that the implication holds for $$S(y)$$, assume the antecedent of the implication: $$S(y)\in{{F}}(n)$$; thus, $$S(y)<n$$. Now, since $$y<S(y)$$, one also has that $$y<n$$ (via transitivity), so that $$y\in{{F}}(n)$$. Hence, since the implication holds for $$y$$, it must be that $$y\in{{S}}$$. In summary then, $$y\in{{S}}$$ and $$S(y)<n$$. So, given that $${{S}}$$ satisfies the hypotheses of the theorem, $$S(y)\in{{S}}$$.
 
 This completes the induction. As usual, one can state this result in terms of properties. Fix an $$n\in{{N}}$$. If $$\phi$$ is an unary property such that $$\phi(0)$$ is true and, for $$x\in{{N}}$$, if $$\phi(x)$$ and $$S(x)<n$$ being true implies $$\phi(S(x))$$ being true, then $$\phi$$ is true for all of $${{F}}(n)$$.
-
-
-&nbsp;
-> I next present a lemma which, while simple, is used often in the main lemma of the next section. So, it is worth spelling it out completely:
-
-
-## Lemma SFSxWSFx
-
-**Subset of $${{F}}(S(n))$$ Without $$n$$ is Subset of $${{F}}(n)$$**: _For any $$U\subseteq{{F}}(S(n))$$ such that $$n \notin U$$, $$U\subseteq{{F}}(n)$$_.
-
-**Proof**: Fix any $$u \in U$$. Then, since $$n \notin U$$, $$u \neq n$$. At the same time, since $$U\subseteq{{F}}(S(n))$$, $$u\in{{F}}(S(n))$$ i.e. $$u\in{{N}}$$ and $$u<S(n)$$; thus, by a lemma from the previous chapter, $$u \leq n$$. So, altogether, $$u \leq n$$ and $$u \neq n$$ i.e. $$u<n$$. Hence, $$u\in{{F}}(n)$$. Since the previous argument is true for arbitrary $$u$$, $$U\subseteq{{F}}(n)$$.
