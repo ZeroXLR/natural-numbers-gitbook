@@ -56,7 +56,7 @@ To show the second part of the theorem, simply replace addition with multiplicat
 
 ## Interlude 0
 
-It is worth pointing out a special thing about the canonical order on the naturals: not all semirings have such a canonical partial order. For instance, if one defined the exact same relation on the integers, one would not get a partial order because antisymmetry would fail. One would get, for example, both $$0\leq 1$$ (because $$0+1=1$$) and $$1 \leq 0$$ (because $$1+(-1)=0$$); but clearly $$0 \neq 1$$ as integers. This happens _precisely_ because the integers have additive inverses; hence, the crucial [Lemma NoInvs](#lemma-noinvs) fails for them. It turns out that one can go further still with the naturals to get a **total order** i.e. any two natural numbers can be compared with one another. This will be discussed next. Note that, in what follows, I will concern myself only with the canonical order and not with the order of divisibility. The reason for this will be clarified at the end of this section.
+There is something special about the canonical order on the naturals: not all semirings have such a canonical partial order. For instance, if one defined the exact same relation on the integers, one would not get a partial order as antisymmetry would fail. One would get, for example, both $$0\leq 1$$ (because $$0+1=1$$) and $$1 \leq 0$$ (because $$1+(-1)=0$$); but clearly $$0 \neq 1$$ as integers. This happens _precisely_ because the integers have additive inverses; hence, the crucial [Lemma NoInvs](#lemma-noinvs) fails for them. It turns out that one can go further still with the naturals to get a **total order** i.e. any two natural numbers can be compared with one another. This will be discussed next. In what follows, I will concern myself only with the canonical order and not with the order of divisibility. The reason for this will be clarified at the end.
 
 
 ## Lemma SxLx
@@ -92,7 +92,7 @@ _For any $$x,y\in{{N}}$$, $$x+S(y)=S(x)+y$$_.
 
 
 &nbsp;
-> The theorem above is sometimes presented in a slightly different form. For this alternative form, one first needs the simple idea of a strict order:
+> The theorem above is sometimes presented in a slightly different form which I illustrate next:
 
 
 ## Definition Strict Order
@@ -108,31 +108,29 @@ _For any $$x,y\in{{N}}$$, $$x+S(y)=S(x)+y$$_.
 
 **Semi-Strict Transitivity**: _For all $$x,y,z\in{{N}}$$, if either $$x \leq y$$ and $$y<z$$, or $$x<y$$ and $$y \leq z$$, then $$x<z$$_.
 
-> The proofs of these are easy. I leave them for the readers to fill in.
-
 
 ## Theorem TotalityAlt
 
 **Totality (Alternative Form)**: _For every $$x,y\in{{N}}$$, exactly one of $$x<y$$, $$x=y$$ or $$y<x$$ is true_.
 
-> The proof of this is also easy. All one has to do is to argue that if one of the cases happen, the other two cases cannot happen. That at least one of the cases happen is already guaranteed by the original theorem on totality.
+> The proofs of these are easy. I leave them for the readers to fill in.
 
 
 ## Failure of Totality for Divisibility
 
 The reason why there are no divisibility analogues for the totality theorems is that divisibility is not total. For example, $$S(S(0))=2$$ neither is divisible by nor divides $$S(S(S(0)))=3$$.
 
-To see this, suppose that there is some natural $$y$$ such that $$S(S(0)) \cdot y=S(S(S(0)))$$. Now,
+To see this, suppose one had a natural $$y$$ such that $$S(S(0)) \cdot y=S(S(S(0)))$$. Now,
 $$
 S(S(0)) \cdot y=y \cdot S(S(0))=y \cdot S(0)+y=y+y
 $$
-Clearly, $$y$$ cannot be $$0$$, lest $$3$$ be $$0$$. Hence, there is some natural $$y'$$ such that $$S(y')=y$$. Also, $$y$$ cannot be $$S(0)=1$$, lest $$3$$ be the same as $$2$$. Hence, there also another natural $$y''$$ such that $$S(y'')=y'$$. Hence, $$y=S(S(y''))$$. Thus, after some algebra,
+Clearly, $$y$$ can't be $$0$$, lest $$3$$ be $$0$$. Hence, one has a natural $$y'$$ such that $$S(y')=y$$. Also, $$y$$ can't be $$S(0)=1$$, lest $$3$$ be the same as $$2$$. So, one has another natural $$y''$$ such that $$S(y'')=y'$$. Hence, $$y=S(S(y''))$$. Thus, after some algebra,
 $$
 y+y=S(S(y''))+S(S(y''))=\ldots=S(S(S(S(y''+y''))))
 $$
-But, then $$S(S(S(S(y''+y''))))=S(S(0)) \cdot y=S(S(S(0)))$$; so after three applications of the injectivity of $$S$$, $$S(y''+y'')=0$$ which is absurd.
+But then $$S(S(S(S(y''+y''))))=S(S(0)) \cdot y=S(S(S(0)))$$; so, after three applications of the injectivity of $$S$$, one gets $$S(y''+y'')=0$$, which is absurd.
 
-Conversely, suppose there is some natural $$y$$ such that $$S(S(S(0))) \cdot y=S(S(0)))$$. Then, again, after a few manipulations,
+Conversely, suppose one has a natural $$y$$ such that $$S(S(S(0))) \cdot y=S(S(0)))$$. Then, again,
 $$
 S(S(S(0))) \cdot y=\ldots=(y+y)+y
 $$
@@ -140,4 +138,4 @@ As before, $$2$$ can't be $$0$$ so that there is a natural $$y'$$ such that $$S(
 $$
 (y+y)+y=(S(y')+S(y'))+S(y')=\ldots=S(S(S(y')))
 $$
-So, if $$S(S(S(y')))=S(S(0))$$, then $$S(y')=0$$ which is, again, absurd.
+So, if $$S(S(S(y')))=S(S(0))$$, then $$S(y')=0$$, which is, again, absurd.
