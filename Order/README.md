@@ -2,15 +2,23 @@
 {% set S = "\\Sigma" %}
 
 
-> Having dealt with the albegraic properties of the natural numbers, I turn to explore their order properties. Recall that I defined the order thus: $$x \leq y$$ iff $$\exists n\in{{N}}\ [x+n=y]$$. Furthermore, I have already shown, quite trivially, that this order is **reflexive**.
+> Having dealt with the albegraic properties of the natural numbers, I turn to explore their order properties. Recall that I defined the canonical order thus: $$x \leq y$$ iff $$\exists n\in{{N}}\ [x+n=y]$$. Furthermore, I have already shown, quite trivially, that this order is **reflexive**. On the other hand, I have, as yet, shown nothing about the order of divisibility.
+
+
+## Theorem DivReflexivity
+
+**Reflexivity of Divisibility**: _For all $$x\in{{N}}$$, $$x\ |\ x$$_.
+
+**Proof**: This is just a rephrasing of [Theorem IdMultiply](../AddAndMultiply.md#theorem-idmultiply).
 
 
 ## Theorem Transitivity
 
-**Transitivity**: _For all $$x,y,z\in{{N}}$$, if $$x \leq y$$ and $$y \leq z$$, then $$x \leq z$$_.
+**Transitivity**: _For all $$x,y,z\in{{N}}$$, if $$x \leq y$$ and $$y \leq z$$, then $$x \leq z$$_. _Also, if $$x\ |\ y$$ and $$y\ |\ z$$, then $$x\ |\ z$$_.
 
 **Proof**: If one assumes the hypothesis, then there are $$n,n'\in{{N}}$$ such that $$x+n=y$$ and $$y+n'=z$$. So, after substitution and [associativity](../AddAndMultiply.md#theorem-assocadd), $$(x+n)+n'=x+(n+n')=z$$. So, there is, in fact, a natural number $$n''=n+n'$$ such that $$x+n''=z$$ i.e. $$x \leq z$$.
 
+To show the second part of the theorem, one can use an analogous argument where one replaces addition with multiplication above.
 
 &nbsp;
 > The above proof aside, I will, henceforth, use the previously proved properties of the natural numbers without explicit warnings. I leave it to the readers to fill in the relevant details from the list of properties proved so far.
@@ -20,21 +28,35 @@
 
 > This lemma seems like it belongs in the previous chapter. However, its implications are most felt in this chapter on order. In particular, it will be an important step in showing that the order on the natural numbers is **antisymmetric**.
 
-**No Non-Zero Natural Number has Inverses**: _For all $$x,y\in{{N}}$$, if $$x \neq 0$$, then $$x+y \neq 0$$_.
+**No Non-Zero Natural Number has Additive Inverses**: _For all $$x,y\in{{N}}$$, if $$x \neq 0$$, then $$x+y \neq 0$$_.
 
-**Proof**: One doesn't even need induction for this. A simple case analysis suffices. Assume the lemma's hypothesis. Now, If $$y=0$$ then, obviously, $$x+y=x+0=x \neq 0$$. Otherwise, there is some natural number $$y'$$ such that $$S(y')=y$$. So now, $$x+y=x+S(y')=S(x+y')$$ and this can never be $$0$$.
+**No Non-Unit Natural Number has Multiplicative Inverses**: _For all $$x,y\in{{N}}$$, if $$x \cdot y=1$$, then $$x=1$$_.
+
+**Proof**: A simple case analysis suffices for the first part. Assume the lemma's hypothesis. Now, if $$y=0$$ then, obviously, $$x+y=x+0=x \neq 0$$. Otherwise, there is some natural $$y'$$ such that $$S(y')=y$$. So now, $$x+y=x+S(y')=S(x+y')$$ and this can never be $$0$$.
+
+For the second part, a slightly lengthier analysis is needed. Assume, again, the lemma's hypothesis i.e. $$x \cdot y=1=S(0) \neq 0$$. Hence, neither $$x$$ nor $$y$$ can be zero. So, there are naturals $$x',y'$$ such that $$S(x')=x, S(y')=y$$. So, using the hypothesis again, one gets that
+$$
+x \cdot y=S(x') \cdot S(y')=S(x') \cdot y'+S(x')=S(S(x') \cdot y'+x')=S(0)
+$$
+Thus, $$S(x') \cdot y'+x'=x'+S(x') \cdot y'=0$$. So, since no non-zero natural can have additive inverses, one has that $$x'=0$$. This immediately implies that $$x=S(x')=S(0)=1$$.
 
 
 ## Theorem AntiSymmetry
 
-**AntiSymmetry**: _For all $$x,y\in{{N}}$$, if $$x \leq y$$ and $$y \leq x$$, then $$x=y$$_.
+**AntiSymmetry**: _For all $$x,y\in{{N}}$$, if $$x \leq y$$ and $$y \leq x$$, then $$x=y$$_. _Analogously, for the order of divisibility, if $$x\ |\ y$$ and $$y\ |\ x$$, then $$x=y$$_.
 
-**Proof**: Assuming the hypothesis yields that there are $$n,n'\in{{N}}$$ such that $$x+n=y$$ and $$y+n'=x$$. Hence, $$(x+n)+n'=x+(n+n')=x=x+0$$. After cancelling, $$n+n'=0$$ which, by the previous lemma's contrapositive, yields $$n=0$$. Hence, $$x=x+0=x+n=y$$.
+**Proof**: Assuming the hypothesis yields that there are $$n,n'\in{{N}}$$ such that $$x+n=y$$ and $$y+n'=x$$. Hence,
+$$
+x+(n+n')=(x+n)+n'=y+n'=x=x+0
+$$
+After (additive) cancelling, $$n+n'=0$$ which yields $$n=0$$ as no non-zero natural can have additive inverses. Hence, $$x=x+0=x+n=y$$.
+
+To show the second part of the theorem, simply replace addition with multiplication above.
 
 
 ## Interlude 0
 
-Thus, the aforementioned order on $${{N}}$$ is **reflexive**, **transitive** and **antisymmetric**. It is therefore a _**partial order**_. In the context of a semiring, this partial order, if it exists, is actually called the _**canonical partial order**_ on the semiring. Not all semirings have a canonical partial order. For instance, if one defined the exact same relation on the integers, one would not get a partial order because antisymmetry would fail. One would get, for example, both $$0\leq 1$$ (because $$0+1=1$$) and $$1 \leq 0$$ (because $$1+(-1)=0$$); but clearly $$0 \neq 1$$ as integers. This happens _precisely_ because the integers have additive inverses; hence, the crucial [Lemma NoInvs](#lemma-noinvs) fails for them. It should not be very hard to convince oneself that any semiring that does not have inverses (for non-zero elements) has a canonical partial order. In the particular case of the natural numbers, however, one can go further still. It turns out that, here, one actually has a _**total order**_ i.e. any two natural numbers can be compared with one another. This will be discussed next.
+It is worth pointing out a special thing about the canonical order on the naturals: not all semirings have such a canonical partial order. For instance, if one defined the exact same relation on the integers, one would not get a partial order because antisymmetry would fail. One would get, for example, both $$0\leq 1$$ (because $$0+1=1$$) and $$1 \leq 0$$ (because $$1+(-1)=0$$); but clearly $$0 \neq 1$$ as integers. This happens _precisely_ because the integers have additive inverses; hence, the crucial [Lemma NoInvs](#lemma-noinvs) fails for them. It turns out that one can go further still with the naturals to get a **total order** i.e. any two natural numbers can be compared with one another. This will be discussed next. Note that, in what follows, I will concern myself only with the canonical order and not with the order of divisibility. The reason for this will be clarified at the end of this section.
 
 
 ## Lemma SxLx
@@ -94,3 +116,28 @@ _For any $$x,y\in{{N}}$$, $$x+S(y)=S(x)+y$$_.
 **Totality (Alternative Form)**: _For every $$x,y\in{{N}}$$, exactly one of $$x<y$$, $$x=y$$ or $$y<x$$ is true_.
 
 > The proof of this is also easy. All one has to do is to argue that if one of the cases happen, the other two cases cannot happen. That at least one of the cases happen is already guaranteed by the original theorem on totality.
+
+
+## Failure of Totality for Divisibility
+
+The reason why there are no divisibility analogues for the totality theorems is that divisibility is not total. For example, $$S(S(0))=2$$ neither is divisible by nor divides $$S(S(S(0)))=3$$.
+
+To see this, suppose that there is some natural $$y$$ such that $$S(S(0)) \cdot y=S(S(S(0)))$$. Now,
+$$
+S(S(0)) \cdot y=y \cdot S(S(0))=y \cdot S(0)+y=y+y
+$$
+Clearly, $$y$$ cannot be $$0$$, lest $$3$$ be $$0$$. Hence, there is some natural $$y'$$ such that $$S(y')=y$$. Also, $$y$$ cannot be $$S(0)=1$$, lest $$3$$ be the same as $$2$$. Hence, there also another natural $$y''$$ such that $$S(y'')=y'$$. Hence, $$y=S(S(y''))$$. Thus, after some algebra,
+$$
+y+y=S(S(y''))+S(S(y''))=\ldots=S(S(S(S(y''+y''))))
+$$
+But, then $$S(S(S(S(y''+y''))))=S(S(0)) \cdot y=S(S(S(0)))$$; so after three applications of the injectivity of $$S$$, $$S(y''+y'')=0$$ which is absurd.
+
+Conversely, suppose there is some natural $$y$$ such that $$S(S(S(0))) \cdot y=S(S(0)))$$. Then, again, after a few manipulations,
+$$
+S(S(S(0))) \cdot y=\ldots=(y+y)+y
+$$
+As before, $$2$$ can't be $$0$$ so that there is a natural $$y'$$ such that $$S(y')=y$$. Hence,
+$$
+(y+y)+y=(S(y')+S(y'))+S(y')=\ldots=S(S(S(y')))
+$$
+So, if $$S(S(S(y')))=S(S(0))$$, then $$S(y')=0$$ which is, again, absurd.

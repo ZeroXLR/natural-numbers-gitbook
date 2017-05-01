@@ -5,9 +5,9 @@
 > I end the exploration of order by showing some algebraic properties of order. The first few results deal with the fact that addition and multiplication preserve order:
 
 
-## Theorem APO
+## Theorem APCO
 
-**Addition Preserves Order**: _For any $$x,y,z\in{{N}}$$, $$x \leq y$$, iff $$x+z \leq y+z$$_.
+**Addition Preserves Canonical Order**: _For any $$x,y,z\in{{N}}$$, $$x \leq y$$, iff $$x+z \leq y+z$$_.
 
 **Proof**: Suppose $$x \leq y$$. Then one has a $$k\in{{N}}$$ such that $$x+k=y$$. Hence,
 $$
@@ -17,15 +17,17 @@ So, $$x+z \leq y+z$$.
 
 Conversely, supposing $$x+z \leq y+z$$, by the the same sequence of equalities as above (except in reverse), one has that for some natural $$k$$, $$(x+k)+z=y+z$$. Then, by cancellation, one has that $$x+k=y$$ i.e. $$x \leq y$$.
 
+However, it is _not_ the case that addition preserves divisibility. For instance, $$1$$ certainly divides $$2$$; but, [as shown previously](README.md#failure-of-totality-for-divisibility), $$1+1=2$$ does not divide $$2+1=3$$.
 
-## Corollary APOStrict
+
+## Corollary APCOStrict
 
 **Addition Preserves Strict Order**: _For any $$x,y,z\in{{N}}$$, $$x<y$$, iff $$x+z<y+z$$_.
 
 
 ## Theorem MPO
 
-**Multiplication Preserves Order**: _For any $$x,y,z\in{{N}}$$, if $$x \leq y$$, then $$z \cdot x \leq z \cdot y$$_. _Also, if $$z \neq 0$$ and $$z \cdot x \leq z \cdot y$$, then $$x \leq y$$_.
+**Multiplication Preserves Order**: _For any $$x,y,z\in{{N}}$$, if $$x \leq y$$, then $$z \cdot x \leq z \cdot y$$_. _Also, if $$z \neq 0$$ and $$z \cdot x \leq z \cdot y$$, then $$x \leq y$$_. _Furthermore, if $$x\ |\ y$$, then $$x \cdot z\ |\ y \cdot z$$ and, as a partial converse, if $$x \cdot z\ |\ y \cdot z$$ and $$z \neq 0$$, then $$x\ |\ y$$_.
 
 **Proof**: Suppose that $$x \leq y$$. Then, $$x+k=y$$ for some natural $$k$$. So, $$
 z \cdot (x+k)=z \cdot x+z \cdot k=z \cdot y
@@ -39,6 +41,12 @@ $$
 $$
 Thus, $$z \cdot x \leq z \cdot y$$. So, by the inductive hypothesis, $$x \leq y$$. Now, since $$z \neq 0$$, it cannot have inverses. Therefore, $$z+k \neq 0$$, so that $$z \cdot x \neq z \cdot y$$ by (the contrapositive of) cancellation. Thus, $$x \neq y$$; otherwise, multiplication being a function, $$z \cdot x$$ would have equaled $$z \cdot y$$. Hence, $$x<y$$. But then, as $$S(x)$$ is the least element strictly greater than $$x$$, $$S(x) \leq y$$, which was to be shown.
 
+The proof of the second part of the theorem, concerning divisibility, is trivial: if $$x \cdot k=y$$, then, certainly,
+$$
+(x \cdot z) \cdot k=x \cdot (z \cdot k)=x \cdot (k \cdot z)=(x \cdot k) \cdot z=y \cdot z
+$$
+For the partial converse, simply replicate the algebra above, in a different order, and then multiplicatively cancel out $$z$$ (possible as $$z \neq 0$$).
+
 
 ## Corollary MPOStrict
 
@@ -49,7 +57,7 @@ Thus, $$z \cdot x \leq z \cdot y$$. So, by the inductive hypothesis, $$x \leq y$
 > Of course, in all the theorems and corollaries above, one can change whether $$z$$ adds/multiplies from the left or the right by commutativity. Next, I define a limited from of subtraction which uses order to enforce the condition that only smaller (or equal) values should be subtracted from larger (or equal) values:
 
 
-## Definition LimitedSubtraction
+## Definition LimSub
 
 Note first that for $$x,y\in{{N}}$$, if $$x \leq y$$, then, by definition, one has a $$k\in{{N}}$$ such that $$x+k=y$$. This $$k$$ is, in fact, unique. For if there were another $$k'\in{{N}}$$ such that $$x+k'=y$$, then one would have $$x+k=x+k'$$, so that, by cancellation, $$k=k'$$.
 
@@ -61,12 +69,12 @@ The reader can proceed to investigate various algebraic properties of this defin
 
 
 &nbsp;
-> Next, I define limited forms of the division function
+> Next, I define approximate forms of the division function
 
 
-## Definition LimitedDivision
+## Definition ApproxDiv
 
-Limited division comes in two forms: one form is floored while the other form is ceiling-ed. First, for any $$x,y\in{{N}}$$ **with $$y \neq 0$$**, define $$L_{x/y}=\{p\in{{N}}:\ y \cdot p \leq x\}$$ and $$U_{x/y}=\{p\in{{N}}:\ x \leq y \cdot p\}$$. I leave it to the readers to check that both of these sets are always non-empty and that, in the case of $$L_{x/y}$$, it is bounded above (**$$y \neq 0$$ is crucial for showing this!**). Hence, by the two forms of well-ordering, one can respectively define:
+Approximate division comes in two forms: one form is floored while the other form is ceiling-ed. First, for any $$x,y\in{{N}}$$ **with $$y \neq 0$$**, define $$L_{x/y}=\{p\in{{N}}:\ y \cdot p \leq x\}$$ and $$U_{x/y}=\{p\in{{N}}:\ x \leq y \cdot p\}$$. I leave it to the readers to check that both of these sets are always non-empty and that, in the case of $$L_{x/y}$$, it is bounded above (**$$y \neq 0$$ is crucial for showing this!**). Hence, by the two forms of well-ordering, one can respectively define:
 
 * $$\lfloor\square/\square\rfloor:{{N}}\times({{N}}\setminus\{0\})\ni(x,y)\mapsto\text{max}(L_{x/y})\in{{N}}$$
 * $$\lceil\square/\square\rceil:{{N}}\times({{N}}\setminus\{0\})\ni(x,y)\mapsto\text{min}(U_{x/y})\in{{N}}$$
@@ -78,3 +86,13 @@ The reader can also check the following properties for him or herself:
 * $$z\cdot\lfloor x/y \rfloor \leq \lfloor (z \cdot x)/y \rfloor$$ and $$\lceil (z \cdot x)/y \rceil \leq z\cdot\lceil x/y \rceil$$; but if $$\lfloor x/y \rfloor = \lceil x/y \rceil$$, then $$z \cdot (x/y)=(z \cdot x)/y$$
 
 No doubt, the reader can think of the usual properties of normal division and test how they fare against these limited forms of division.
+
+
+## Definition LimDiv
+
+As with limited subtraction, one can also define limited division. Unlike the two forms of approximate division, this is defined by restricting the domain of division to the following set: $$
+|^\textbf{op}\ =\{(y,x)\in{{N}}\times{{N}}:\ (x,y)\in\ |\}
+$$
+Now define the infix $$/:\ |^\textbf{op}\ \to{{N}}$$ as follows. Given $$(x,y)\in\ |^\textbf{op}\ $$, one has that $$y\ |\ x$$. Now, there are two cases:
+* If $$y=0$$, then $$x$$ has to be $$0$$ also and, thus, one has many choices of naturals $$k$$ such that $$y \cdot k=0 \cdot k=0=x$$. One can choose any one of these naturals as the definition of $$x/y=0/0$$. For simplicity, I chose $$1$$.
+* If $$y \neq 0$$, then, there is a unique natural $$k$$ such that $$y \cdot k=x$$. So define $$x/y$$ to be this $$k$$.

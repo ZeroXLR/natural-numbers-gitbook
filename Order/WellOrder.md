@@ -2,7 +2,7 @@
 {% set S = "\\Sigma" %}
 
 
-> One has now shown that the natural numbers are totally ordered. Believe it or not, one can go _even_ further! The natural numbers are also _**well-ordered**_ i.e. every non-empty subset of the naturals have a smallest/least element. Thus, one cannot have "bottomless chasms" in the natural numbers. At some point, as one descends down a non-empty natural subset according to order, one must reach the bottom in a finite number of steps.
+> One has now shown that the natural numbers are totally ordered according to the canonical order. Believe it or not, one can go _even_ further! The natural numbers are also **well-ordered** i.e. every non-empty subset of the naturals have a smallest/least element. Thus, one cannot have "bottomless chasms" in the natural numbers. At some point, as one descends down a non-empty natural subset according to canonical order, one must reach the bottom in a finite number of steps.
 
 
 ## Definition LE
