@@ -2,7 +2,8 @@
 
 * [Introduction](README.md)
 * [Warm Up](WarmUp.md)
-* [Recursive Definitions](RecursiveDefinitions.md)
+* [Recursive Definitions](RecDefs/README.md)
+	* [Examples](RecDefs/Examples.md)
 * [Addition and Multiplication](AddAndMultiply.md)
 * [Order](Order/README.md)
     * [Well Order](Order/WellOrder.md)

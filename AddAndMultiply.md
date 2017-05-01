@@ -11,7 +11,7 @@
 
 **Proof**: As usual, let $${{S}}=\{z\in{{N}}:\ \forall x,y\in{{N}}\ [(x+y)+z=x+(y+z)]\}$$.
 
-1. $$0\in{{S}}$$ because $$(x+y)+0=x+y=x+(y+0)$$ by the [definition of addition](RecursiveDefinitions.md#examples) applied to $$x+y$$ for the first equality and to $$y$$ for the second equality.
+1. $$0\in{{S}}$$ because $$(x+y)+0=x+y=x+(y+0)$$ by the [definition of addition](RecDefs/Examples.md) applied to $$x+y$$ for the first equality and to $$y$$ for the second equality.
 2. Suppose, now, that $$z\in{{S}}$$. Then, for any $$x,y\in{{N}}$$:
 $$
 \begin{aligned}
@@ -27,7 +27,7 @@ This completes the induction and shows that $${{N}}\subseteq{{S}}$$, so that any
 
 ## Reminder on a Property of Addition
 
-Before one shows the next lemma, I would like to remind the reader of an easy property that I showed when I [defined addition](RecursiveDefinitions.md#examples): $$x+S(0)=S(x)$$.
+Before one shows the next lemma, I would like to remind the reader of an easy property that I showed when I [defined addition](RecDefs/Examples.md): $$x+S(0)=S(x)$$.
 
 
 ## Theorem CommutAdd
@@ -38,7 +38,7 @@ Before one shows the next lemma, I would like to remind the reader of an easy pr
 
 1. One needs to show that $$0\in{{S}}$$ i.e. for all $$x\in{{N}}$$, $$x+0=0+x$$ This, itself, requires a mini-induction on $$x$$!
     * Well, if $$x=0$$, then $$x+0=0+0=0+x$$.
-    * Now, assume that the claim holds for $$x$$. Then, $$0+S(x)=S(0+x)$$ by the [definition of addition](RecursiveDefinitions.md#examples). But, as $$x$$ satisfies the claim, $$S(0+x)=S(x+0)$$. Next, $$S(x+0)=S(x)$$ by a [property of addition shown earlier](#reminder-on-a-property-of-addition). Finally, the [definition of addition](RecursiveDefinitions.md#examples) also gives $$S(x)=S(x)+0$$.
+    * Now, assume that the claim holds for $$x$$. Then, $$0+S(x)=S(0+x)$$ by the [definition of addition](RecDefs/Examples.md). But, as $$x$$ satisfies the claim, $$S(0+x)=S(x+0)$$. Next, $$S(x+0)=S(x)$$ by a [property of addition shown earlier](#reminder-on-a-property-of-addition). Finally, the [definition of addition](RecDefs/Examples.md) also gives $$S(x)=S(x)+0$$.
 2. Now, suppose $$y\in{{S}}$$. Then, for any $$x\in{{N}}$$:
 $$
 \begin{aligned}
@@ -72,14 +72,14 @@ $$ So then, how does one show that $$x+S(0)=S(0)+x$$? By induction on $$x$$ of c
 
 **Identity of Addition**: _For all $$x\in{{N}}$$, $$x+0=0+x=x$$_.
 
-**Proof**: Obviously $$x+0=x$$ by the [definition of addition](RecursiveDefinitions.md#examples) itself. At the same time, by [commutativity](#theorem-commutadd), $$0+x=x+0=x$$.
+**Proof**: Obviously $$x+0=x$$ by the [definition of addition](RecDefs/Examples.md) itself. At the same time, by [commutativity](#theorem-commutadd), $$0+x=x+0=x$$.
 
 
 ## Theorem CancAdd
 
 **Addition is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$x+z=y+z$$, then $$x=y$$_.
 
-**Proof**: Note that by the [definition of addition](RecursiveDefinitions.md#examples), the lemma is certainly true for $$z=0$$. In fact, the lemma is also true for $$z=S(0)$$: if $$x+S(0)=y+S(0)$$, then $$S(x)=x+S(0)=y+S(0)=S(y)$$ (I am using a [property of addition shown earlier](#reminder-on-a-property-of-addition)). Then, by [Peano axiom 2](WarmUp.md#definition-peano-axioms), $$x=y$$. Thus, to prove the lemma with induction, one simply needs to assume that it holds for some $$z\in{{N}}$$ and then show that it holds for $$S(z)$$. So suppose it holds for $$z$$ and suppose $$x+S(z)=y+S(z)$$. Then,
+**Proof**: Note that by the [definition of addition](RecDefs/Examples.md), the lemma is certainly true for $$z=0$$. In fact, the lemma is also true for $$z=S(0)$$: if $$x+S(0)=y+S(0)$$, then $$S(x)=x+S(0)=y+S(0)=S(y)$$ (I am using a [property of addition shown earlier](#reminder-on-a-property-of-addition)). Then, by [Peano axiom 2](WarmUp.md#definition-peano-axioms), $$x=y$$. Thus, to prove the lemma with induction, one simply needs to assume that it holds for some $$z\in{{N}}$$ and then show that it holds for $$S(z)$$. So suppose it holds for $$z$$ and suppose $$x+S(z)=y+S(z)$$. Then,
 $$
 \begin{aligned}
 (x+z)+S(0) &= x+(z+S(0)) \ \text{by associativity}\\
@@ -104,7 +104,7 @@ Note that because of [commutativity](#theorem-commutadd), one can also cancel fr
 
 **Proof**: As usual, let $${{S}}=\{z\in{{N}}:\ \forall x,y\in{{N}}\ [(x \cdot y) \cdot z=x \cdot (y \cdot z)]\}$$.
 
-1. $$0\in{{S}}$$ because $$(x \cdot y) \cdot 0=0=x \cdot 0=x \cdot (y \cdot 0)$$ by the [definition of multiplication](RecursiveDefinitions.md#examples).
+1. $$0\in{{S}}$$ because $$(x \cdot y) \cdot 0=0=x \cdot 0=x \cdot (y \cdot 0)$$ by the [definition of multiplication](RecDefs/Examples.md).
 2. Suppose, now, that $$z\in{{S}}$$. Then, for any $$x,y\in{{N}}$$:
 $$
 \begin{aligned}
@@ -179,7 +179,7 @@ $$ So, just like before, one does induction on $$x$$:
 
 **Identity of Multiplication**: _For all $$x\in{{N}}$$, $$x \cdot 1=1 \cdot x=x$$ where $$1=S(0)$$_.
 
-**Proof**: Note that $$x \cdot 1=x \cdot S(0)=x \cdot 0 + x = 0+x=x$$. The reader can fill in the relevant details for manipulations involving $$+$$. For the manipulations involving $$\cdot$$, note the [definition of multiplication and some associated properties shown earlier](RecursiveDefinitions.md#examples). At the same time, by [commutativity](#theorem-commutmultiply), $$1 \cdot x=x \cdot 1=x$$.
+**Proof**: Note that $$x \cdot 1=x \cdot S(0)=x \cdot 0 + x = 0+x=x$$. The reader can fill in the relevant details for manipulations involving $$+$$. For the manipulations involving $$\cdot$$, note the [definition of multiplication and some associated properties shown earlier](RecDefs/Examples.md). At the same time, by [commutativity](#theorem-commutmultiply), $$1 \cdot x=x \cdot 1=x$$.
 
 
 ## Theorem LDistMultiplyAdd
@@ -204,7 +204,7 @@ $$ So, just like before, one does induction on $$x$$:
 $$
 x \cdot y=S(x') \cdot S(y')=S(x') \cdot y'+S(x')=S(S(x') \cdot y'+x')
 $$
-by the [definitions of addition and multiplication alone](RecursiveDefinitions.md#examples). But then, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(S(x') \cdot y'+x')$$ cannot be $$0$$.
+by the [definitions of addition and multiplication alone](RecDefs/Examples.md). But then, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(S(x') \cdot y'+x')$$ cannot be $$0$$.
 
 
 ## Theorem CancMultiply
