@@ -1,3 +1,7 @@
+{% set N = "\\mathbb{N}" %}
+{% set U = "\\mathcal{U}" %}
+
+
 ## Examples
 
 The two theorems just seen are among the most powerful in this book. They allow one to construct all the basic algebraic and order structure of $${{N}}$$:
