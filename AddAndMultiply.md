@@ -79,7 +79,7 @@ $$ So then, how does one show that $$x+S(0)=S(0)+x$$? By induction on $$x$$ of c
 
 **Addition is Cancellative**: _For all $$x,y,z\in{{N}}$$, if $$x+z=y+z$$, then $$x=y$$_.
 
-**Proof**: Note that by the [definition of addition](RecDefs/Examples.md), the lemma is certainly true for $$z=0$$. In fact, the lemma is also true for $$z=S(0)$$: if $$x+S(0)=y+S(0)$$, then $$S(x)=x+S(0)=y+S(0)=S(y)$$ (I am using a [property of addition shown earlier](#reminder-on-a-property-of-addition)). Then, by [Peano axiom 2](WarmUp.md#definition-peano-axioms), $$x=y$$. Thus, to prove the lemma with induction, one simply needs to assume that it holds for some $$z\in{{N}}$$ and then show that it holds for $$S(z)$$. So suppose it holds for $$z$$ and suppose $$x+S(z)=y+S(z)$$. Then,
+**Proof**: Note that by the [definition of addition](RecDefs/Examples.md), the lemma is certainly true for $$z=0$$. In fact, the lemma is also true for $$z=S(0)$$: if $$x+S(0)=y+S(0)$$, then $$S(x)=x+S(0)=y+S(0)=S(y)$$ (I am using a [property of addition shown earlier](#reminder-on-a-property-of-addition)). Then, by [Peano axiom 2](Peano.md#definition-peano-axioms), $$x=y$$. Thus, to prove the lemma with induction, one simply needs to assume that it holds for some $$z\in{{N}}$$ and then show that it holds for $$S(z)$$. So suppose it holds for $$z$$ and suppose $$x+S(z)=y+S(z)$$. Then,
 $$
 \begin{aligned}
 (x+z)+S(0) &= x+(z+S(0)) \ \text{by associativity}\\
@@ -200,11 +200,11 @@ $$ So, just like before, one does induction on $$x$$:
 
 **$${{N}}$$ has No Zero Divisors**: _For all $$x,y\in{{N}}$$, if $$x \cdot y = 0$$, then $$x=0$$ or $$y=0$$_.
 
-**Proof**: Suppose, for the sake of proving the contrapositive, that neither $$x\in{{N}}$$ nor $$y\in{{N}}$$ is $$0$$. Then, by [Lemma ExPre](WarmUp.md#lemma-expre), there are $$x',y'\in{{N}}$$ such that $$S(x')=x$$ and $$S(y')=y$$. Then,
+**Proof**: Suppose, for the sake of proving the contrapositive, that neither $$x\in{{N}}$$ nor $$y\in{{N}}$$ is $$0$$. Then, by [Lemma ExPre](Peano.md#lemma-expre), there are $$x',y'\in{{N}}$$ such that $$S(x')=x$$ and $$S(y')=y$$. Then,
 $$
 x \cdot y=S(x') \cdot S(y')=S(x') \cdot y'+S(x')=S(S(x') \cdot y'+x')
 $$
-by the [definitions of addition and multiplication alone](RecDefs/Examples.md). But then, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(S(x') \cdot y'+x')$$ cannot be $$0$$.
+by the [definitions of addition and multiplication alone](RecDefs/Examples.md). But then, by [Peano axiom 3](Peano.md#definition-peano-axioms), $$S(S(x') \cdot y'+x')$$ cannot be $$0$$.
 
 
 ## Theorem CancMultiply
@@ -217,11 +217,11 @@ by the [definitions of addition and multiplication alone](RecDefs/Examples.md). 
 $$
 z \cdot S(x)=z \cdot x + z=z \cdot y
 $$
-Now, by [Peano axiom 3](WarmUp.md#definition-peano-axioms), $$S(x) \neq 0$$. Since also, $$z \neq 0$$ by hypothesis, one has that $$y \neq 0$$; for otherwise, $$z \cdot S(x)=z \cdot y=z \cdot 0=0$$, contradicting the previous lemma. Hence, by [Lemma ExPre](WarmUp.md#lemma-expre), there is a $$y'\in{{N}}$$ such that $$S(y')=y$$. So,
+Now, by [Peano axiom 3](Peano.md#definition-peano-axioms), $$S(x) \neq 0$$. Since also, $$z \neq 0$$ by hypothesis, one has that $$y \neq 0$$; for otherwise, $$z \cdot S(x)=z \cdot y=z \cdot 0=0$$, contradicting the previous lemma. Hence, by [Lemma ExPre](Peano.md#lemma-expre), there is a $$y'\in{{N}}$$ such that $$S(y')=y$$. So,
 $$
 z \cdot x + z=z \cdot y=z \cdot S(y')=z \cdot y' + z
 $$
-Now, by [additive cancellation](#theorem-cancadd), $$z \cdot x=z \cdot y'$$. But as $$x\in{{S}}$$ and $$z \neq 0$$, this means that $$x=y'$$, so that $$S(x)=S(y')=y$$ by [Peano axiom 2](WarmUp.md#definition-peano-axioms). This concludes the induction.
+Now, by [additive cancellation](#theorem-cancadd), $$z \cdot x=z \cdot y'$$. But as $$x\in{{S}}$$ and $$z \neq 0$$, this means that $$x=y'$$, so that $$S(x)=S(y')=y$$ by [Peano axiom 2](Peano.md#definition-peano-axioms). This concludes the induction.
 
 Note that because of [commutativity](#theorem-commutmultiply), one can also cancel from the right i.e. if $$x \cdot z=y \cdot z$$, then $$x=y$$.
 

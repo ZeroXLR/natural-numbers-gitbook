@@ -47,7 +47,7 @@ _For $$n,k\in{{N}}$$, $$k \leq n$$ iff $${{F}}(k)\subseteq{{F}}(n)$$_.
 
 
 &nbsp;
-> Now I turn to an alternative characterization of induction using $${{F}}$$. This principle of induction is often termed **strong induction** while the usual one, characterized by [Peano axiom 4](../WarmUp.md#definition-peano-axioms), is called **weak induction**. This is somewhat ironic considering the fact that one can derive strong induction from weak induction, as I am about to do. The reason that strong induction is considered "strong" is because its _inductive hypothesis_ is indeed logically stronger as one shall see:
+> Now I turn to an alternative characterization of induction using $${{F}}$$. This principle of induction is often termed **strong induction** while the usual one, characterized by [Peano axiom 4](../Peano.md#definition-peano-axioms), is called **weak induction**. This is somewhat ironic considering the fact that one can derive strong induction from weak induction, as I am about to do. The reason that strong induction is considered "strong" is because its _inductive hypothesis_ is indeed logically stronger as one shall see:
 
 
 ## Theorem InductionAlt

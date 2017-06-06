@@ -61,5 +61,3 @@ A couple of key points are already visible in these simple proofs about the natu
     <ol start="4">
         <li>if $$\phi$$ is an unary property such that $$\phi(0)$$ is true and for every $$n\in{{N}}$$, $$\phi(n)$$ implies $$\phi(S(n))$$, then $$\phi$$ is true for all of $${{N}}$$</li>
     </ol>
-
-I end this chapter with a word of caution about the informal set notation that I have been using. Until now, I have been implicitly assuming that one can make sets such as $$\{n\in{{N}}:\ \phi(n)\}$$ for arbitrary properties $$\phi$$. Strictly speaking, this cannot be true lest one wants to fall victim to [Russell's Paradox](https://en.wikipedia.org/wiki/Russell's_paradox). Informal set theory largely ignores this subtlety and, most of the time, it is inconsequential to the theory being developed. However, it is still worthwhile keeping it in mind in any rigorous study of math.

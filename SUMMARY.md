@@ -1,7 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [Warm Up](WarmUp.md)
+* [Some Set Theory](SetsOverview.md)
+* [The Axioms of Peano](Peano.md)
 * [Recursive Definitions](RecDefs/README.md)
 	* [Examples](RecDefs/Examples.md)
 * [Addition and Multiplication](AddAndMultiply.md)
