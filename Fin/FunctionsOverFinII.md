@@ -7,7 +7,7 @@
 
 ## Theorem NBFPS
 
-_There exist no bijections from $${{F}}(n)$$ to a proper subset of it_.
+_There exist no bijections from $${{F}}(n)$$ to a proper subset of itself_.
 
 **Proof**: Do induction on $$n\in{{N}}$$:
 1. $${{F}}(0)={{E}}$$ has no proper subsets. So, trivially, $${{F}}(0)$$ has no proper subsets bijective to it.
@@ -68,7 +68,7 @@ _If $$f:{{F}}(n)\to{{F}}(n)$$ is a surjection, then it is also a bijection_.
 
 ## Theorem SFnBSFk
 
-**Subset of $${{F}}(n)$$ is Bijective to Some $${{F}}(k)$$**: _Fix an $$n\in{{N}}$$_. _For every $$U\subseteq{{F}}(n)$$, there is a $$k \leq n$$ and a bijection from $${{F}}(k)$$ to $$U$$_.
+**Subset of $${{F}}(n)$$ is Bijective to Some $${{F}}(k)$$**: _Fix an $$n\in{{N}}$$_. _For every $$U\subseteq{{F}}(n)$$, there is a $$k \leq n$$ with some bijection from $${{F}}(k)$$ to $$U$$_.
 
 **Proof**: Do induction on $$n\in{{N}}$$:
 1. If $$U\subseteq{{F}}(0)={{E}}$$, then $$U={{E}}$$. So, there is a $$k$$, namely $$0$$, and a bijection, namely
@@ -76,9 +76,18 @@ $$
 \text{id}_{{E}}:{{E}}={{F}}(k)={{F}}(0) \ni x\mapsto x \in U={{E}}
 $$
 This function is vacuously well-defined and vacuously bijective.
-2. Now suppose the claim is true for $${{F}}(n)$$. Consider any $$U\subseteq{{F}}(S(n))$$. If $$n \notin U$$, then certainly $$U\subseteq{{F}}(n)$$. So, one is done immediately &mdash; the inductive hypothesis guarantees that there is a $$k \leq n<S(n)$$ and a bijection $${{F}}(k) \to U$$. So, suppose $$n \in U$$. Here, $$U\setminus\{n\}\subseteq{{F}}(n)$$ and the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $$f:{{F}}(k) \to U\setminus\{n\}$$. Lift this smaller bijection to a bigger bijection $$f^U:{{F}}(S(k)) \to U$$ thus:
+2. Now suppose the claim is true for $${{F}}(n)$$. Consider any $$U\subseteq{{F}}(S(n))$$. If $$n \notin U$$, then certainly $$U\subseteq{{F}}(n)$$. So immediately, the inductive hypothesis guarantees that there is exactly one $$k \leq n<S(n)$$ with a bijection $${{F}}(k) \to U$$. So, suppose $$n \in U$$. Here, $$U\setminus\{n\}\subseteq{{F}}(n)$$ and the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $$f:{{F}}(k) \to U\setminus\{n\}$$. Lift this smaller bijection to a bigger bijection $$f^U:{{F}}(S(k)) \to U$$ thus:
 $$
 f^U(x)=\begin{cases} f(x) &\text{if } x \neq k \\
                      n    &\text{if } x=k \end{cases}
 $$
-Showing that this function definition is well-defined and bijective is left as an easy, if lengthy, exercise for the reader. Note, furthermore, that since $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection does satisfy the requirements of the theorem.
+Showing that this function definition is well-defined and bijective is left as an easy, if lengthy, exercise for the reader. Note, furthermore, that since $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the requirements of the theorem, as applied to $${{F}}(S(n))$$.
+
+This completes the induction and one always has a $$k \leq n$$ with some bijection $$f$$ from $${{F}}(k)$$ to $$U$$.
+
+
+## Corollary SFnBSUFk
+
+**Subset of $${{F}}(n)$$ is Bijective to Some Unique $${{F}}(k)$$**: _Fix an $$n\in{{N}}$$_. _For every $$U\subseteq{{F}}(n)$$, there is **exactly one** $$k \leq n$$ with some bijection from $${{F}}(k)$$ to $$U$$_.
+
+**Proof**: Continuing from the end of the previous proof, only the uniqueness part remains to be shown. For this, the reader should keep in their minds [results about functions shown earlier](../SetsOverview.md#functions-as-sets). So, suppose there is some other $$\tilde{k}\in{{N}}$$ with a bijection $${{F}}(\tilde{k}) \to U$$. Now, totality gives either $$\tilde{k} \leq k$$ or $$k\leq\tilde{k}$$. Assume w.l.o.g. that $$\tilde{k} \leq k$$; the other case can be handled similarly. Continuing, the bijection associated with $$\tilde{k}$$ induces a left inverse $$\phi:U\to{{F}}(\tilde{k})$$ that is also a bijection. Composing, one gets a bijectiion $$(\phi \circ f):{{F}}(k)\to{{F}}(\tilde{k})$$. Since $$\tilde{k} \leq k$$, it must be that $${{F}}(\tilde{k})\subseteq{{F}}(k)$$. But $${{F}}(k)$$ has no bijections from itself to a proper subset of itself. Hence, $${{F}}(\tilde{k})={{F}}(k)$$, so that $$\tilde{k}=k$$.

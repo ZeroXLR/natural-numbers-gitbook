@@ -57,4 +57,4 @@ Thus, in both cases, $$x \neq \tilde{x}$$ implies $$f'(x) \neq f'(\tilde{x})$$ i
 
 
 &nbsp;
-> The consequences of this lemma are numerous. They are explored in the next.
+> The consequences of this lemma are numerous. They are explored next.
