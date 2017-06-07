@@ -73,13 +73,13 @@ f^{-1}(y)=\{x \in X:\ f(x)=y\}
 $$
 Obviously $$f^{-1}(y)$$ is always a subset of $$X$$.
 
-One says that $$f$$ is **injective** iff $$f(x)=f(\tilde{x})$$ implies $$x=\tilde{x}$$. Alternatively, by logical contraposition, $$x \neq \tilde{x}$$ implies $$f(x) \neq f(\tilde{x})$$.
+One says that $$f$$ is **injective** iff $$f(x)=f(\tilde{x})$$ implies $$x=\tilde{x}$$. Alternatively, by logical contraposition, $$x \neq \tilde{x}$$ implies $$f(x) \neq f(\tilde{x})$$. Yet another way to phrase injectivity is this: given a $$y \in Y$$, there is _at most one_ $$x \in X$$ such that $$f(x)=y$$.
 
-On the other hand, one says that $$f$$ is **surjective** iff for every $$y \in Y$$ there exists an $$x \in X$$ such that $$f(x)=y$$. Using notation defined earlier, the reader can verify that surjectivity is equivalent to any of the following assertions:
+On the other hand, one says that $$f$$ is **surjective** iff for every $$y \in Y$$ there is _at least one_ $$x \in X$$ such that $$f(x)=y$$. Using notation defined earlier, the reader can verify that surjectivity is equivalent to any of the following assertions:
 * $$f(X)=Y$$
 * $$f^{-1}(y)\neq{{E}}$$ for any $$y \in Y$$.
 
-If a function is both injective and surjective, it is called **bijective**.
+If a function is both injective and surjective, it is called **bijective**. Hence, if $$f$$ is bijective and $$y \in Y$$, then there is _exactly one_ $$x \in X$$ such that $$f(x)=y$$. This observation allows one to define a function $$f^\text{linv}:Y \to X$$ where $$f^\text{linv}(y)$$ is equal to that one and only $$x$$ satisfying $$f(x)=y$$. This $$f^\text{linv}$$ is called a **left inverse** of $$f$$ because it cancels $$f$$ from the left: $$f^\text{linv}(f(x))=x$$.
 
 I now present some elementary results about functions in general. These results will be used later on in the book, which is why I present them with full proofs, instead of asking the reader to recall them by heart from prerequisite knowledge.
 
@@ -102,7 +102,7 @@ Now, let $$f$$ be injective and $$U \subset X$$. Then, $$x \notin U$$ for some $
 
 ## Lemma LInvBijThenBij
 
-**Left Inverse of a Bijection is a Bijection**: _If one has a function $$f:X \to Y$$ and a bijection $$f':Y \to X$$ where $$f(f'(y))=y$$ for all $$y \in Y$$ (i.e. $$f$$ is a **left inverse** of $$f'$$), then $$f$$ is bijection_.
+**Left Inverse of a Bijection is a Bijection**: _If $$f:X \to Y$$ is a left inverse of a bijection $$f':Y \to X$$, then $$f$$ is bijection_.
 
 **Proof**: Let me first show that $$f$$ is injective i.e. assuming $$f(x)=f(\tilde{x})$$, I will proceed to prove that $$x=x'$$. Now, since $$f'$$ is bijective, and therefore surjective, there are $$y,\tilde{y} \in Y$$ such that $$f'(y)=x$$ and  $$f'(\tilde{y})=\tilde{x}$$. Thus,
 $$

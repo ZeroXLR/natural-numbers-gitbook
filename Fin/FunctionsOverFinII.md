@@ -37,9 +37,9 @@ _If there is an injection from $${{F}}(n)$$ to $${{F}}(k)$$ where $$k \leq n$$, 
 > There is also a surjective analog of [Corollary ifInjthenBij](#corollary-ifinjthenbij).
 
 
-## Lemma SurjInvInj
+## Lemma SurjInvBij
 
-**Surjection produces Inverted Injection**: _If $$f:{{F}}(n)\to{{F}}(n)$$ is an surjection, then there exists an bijection $$f':{{F}}(n)\to{{F}}(n)$$ such that $$f(f'(y))=y$$ (for $$y\in{{F}}(n)$$)_.
+**Surjection produces Inverted Bijection**: _If $$f:{{F}}(n)\to{{F}}(n)$$ is an surjection, then there exists a bijection $$f':{{F}}(n)\to{{F}}(n)$$ such that $$f(f'(y))=y$$ for $$y\in{{F}}(n)$$_.
 
 **Proof**: By the hypothesis of the theorem, $$f^{-1}(y)\neq{{E}}$$ and $$f^{-1}(y)\subseteq{{F}}(n)\subseteq{{N}}$$ for any $$y\in{{F}}(n)$$. Thus, by well-ordering, for every $$y\in{{F}}(n)$$, there is a unique element $$\text{min}(f^{-1}(y)) \in f^{-1}(y)$$. So, the following function is automatically well-defined:
 $$
@@ -57,7 +57,7 @@ since $$f$$ is a function that maps equal values to equal values.
 
 ## Corollary ifSurjthenBij
 
-_If $$f:{{F}}(n)\to{{F}}(n)$$ is an surjection, then it is also a bijection_.
+_If $$f:{{F}}(n)\to{{F}}(n)$$ is a surjection, then it is also a bijection_.
 
 > This result is a straightforward application of the previous lemma and [Lemma LInvBijThenBij](../SetsOverview.md#lemma-linvbijthenbij). I leave it for the readers to fill in the relevant details.
 
@@ -81,4 +81,4 @@ $$
 f^U(x)=\begin{cases} f(x) &\text{if } x \neq k \\
                      n    &\text{if } x=k \end{cases}
 $$
-Showing that this function definition is well-defined and bijective is left as an easy exercise for the reader. Note, furthermore, that since $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection does satisfy the requirements of the theorem.
+Showing that this function definition is well-defined and bijective is left as an easy, if lengthy, exercise for the reader. Note, furthermore, that since $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection does satisfy the requirements of the theorem.
