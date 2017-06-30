@@ -61,7 +61,7 @@ For the partial converse, simply replicate the algebra above, in a different ord
 
 Note first that for $$x,y\in{{N}}$$, if $$x \leq y$$, then, by definition, one has a $$k\in{{N}}$$ such that $$x+k=y$$. This $$k$$ is, in fact, unique. For if there were another $$k'\in{{N}}$$ such that $$x+k'=y$$, then one would have $$x+k=x+k'$$, so that, by cancellation, $$k=k'$$.
 
-Recall next that $$\leq$$ is [actually a subset of $${{N}}\times{{N}}$$](../RecursiveDefinitions.md#examples). Define, now, the following set $$
+Recall next that $$\leq$$ is [actually a subset of $${{N}}\times{{N}}$$](../RecDefs/Examples.md). Define, now, the following set $$
 \geq\ =\{(y,x)\in{{N}}\times{{N}}:\ (x,y)\in\ \leq\}
 $$ and then define subtraction as an infix-function $$-:\ \geq\ \to{{N}}$$ as follows. For any $$(y,x)\in\ \geq$$, by definition, $$x \leq y$$, so that there is a unique $$\delta_x^y\in{{N}}$$ such that $$x+\delta_x^y=y$$; so, simply set $$y-x=\delta_x^y$$.
 
@@ -91,7 +91,7 @@ No doubt, the reader can think of the usual properties of normal division and te
 ## Definition LimDiv
 
 As with limited subtraction, one can also define limited division. Unlike the two forms of approximate division, this is defined by restricting the domain of division to the following set: $$
-|^\textbf{op}\ =\{(y,x)\in{{N}}\times{{N}}:\ (x,y)\in\ |\}
+|^\textbf{op}\ =\{(x,y)\in{{N}}\times{{N}}:\ (y,x)\in\ |\}
 $$
 Now define the infix $$/:\ |^\textbf{op}\ \to{{N}}$$ as follows. Given $$(x,y)\in\ |^\textbf{op}\ $$, one has that $$y\ |\ x$$. Now, there are two cases:
 * If $$y=0$$, then $$x$$ has to be $$0$$ also and, thus, one has many choices of naturals $$k$$ such that $$y \cdot k=0 \cdot k=0=x$$. One can choose any one of these naturals as the definition of $$x/y=0/0$$. For simplicity, I chose $$1$$.
