@@ -78,7 +78,7 @@ $$
 This function is vacuously well-defined and vacuously bijective.
 2. Now suppose the claim is true for $${{F}}(n)$$. Consider any $$U\subseteq{{F}}(S(n))$$. If $$n \notin U$$, then certainly $$U\subseteq{{F}}(n)$$. So immediately, the inductive hypothesis guarantees that there is exactly one $$k \leq n<S(n)$$ with a bijection $${{F}}(k) \to U$$. So, suppose $$n \in U$$. Here, $$U\setminus\{n\}\subseteq{{F}}(n)$$ and the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $$f:{{F}}(k) \to U\setminus\{n\}$$. Lift this smaller bijection to a bigger bijection $$f^U:{{F}}(S(k)) \to U$$ thus:
 $$
-f^U(x)=\begin{cases} f(x) &\text{if } x \neq k \\
+f^U(x)=\begin{cases} f(x) &\text{if } x<k \\
                      n    &\text{if } x=k \end{cases}
 $$
 Showing that this function definition is well-defined and bijective is left as an easy, if lengthy, exercise for the reader. Note, furthermore, that since $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the requirements of the theorem, as applied to $${{F}}(S(n))$$.

@@ -20,7 +20,7 @@ x\in\{x\in{{N}}:\ x<n\}\cup\{n\}={{F}}(n)\cup\{n\}={{F}}(S(n))
 $$
 Putting both of this together, one has that $${{F}}(S(n))=\{x\in{{N}}:\ x<S(n)\}$$.
 
-This is a important result and it is, henceforth, assumed implicitly in the rest of this book.
+This is an important result and it is, henceforth, assumed implicitly in the rest of this book.
 
 
 ## Corollary FkSSFn
