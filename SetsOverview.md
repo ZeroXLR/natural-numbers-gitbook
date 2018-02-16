@@ -9,7 +9,7 @@ The theory of sets is deep and has many subtleties. Strictly speaking, what exac
 
 Moving on, a set is denoted either in **explicit form** where all the elements of the set are written down between curly braces or in **set builder form** where the condition/predicate satisfied by the elements of the set is written down between curly braces. An example of the former is $$\{0, 1\}$$, whereas as example of the latter is $$\{x:\ x\in{{N}}\ \text{and}\ x<2\}$$ (pretend that $${{N}}$$ is defined in the last example). Sometimes, in set builder notation, one of the conditions is snuck onto the left side of the '$$:$$'. For instance, I could have equally written the last example as $$\{x\in{{N}}:\ x<2\}$$.
 
-If one thinks about the two denotations for a while, one will eventually realize that the set builder form is more expressive than the explicit form. One can, for example, easily denote and manipulate infinite sets with the set builder form, while one cannot humanly write down the explicit form of an infinite set. However, the set builder form is also _too_ powerful. In general, collections of the form $$\{x:\ \phi(x)\}$$ cannot be sets for arbitrary conditions $$\phi$$, lest one wants to fall victim to [Russell's Paradox](https://en.wikipedia.org/wiki/Russell's_paradox). Some of those arbitrary collections must either not exist or be something "larger" than sets, called **classes**. I do not want to talk extensively about classes in this book since their concept ventures too close to the deeper foundations of set theory that I wish to avoid. However, I mention them to motivate mention of a special class worth keeping in mind, even within informal set theory &mdash; the **universal class** $${{U}}$$ that contains all sets. In most set theories, this also means that $${{U}}$$ contains all the mathematical objects being talked about because, in those theories, most objects of mathematical interest are sets!
+If one thinks about the two notations for a while, one will realize that the set builder form is more expressive than the explicit form. One can, for example, easily denote and manipulate infinite sets with the set builder form, while one cannot humanly write down the explicit form of an infinite set. However, the set builder form is _too_ powerful. In general, collections of the form $$\{x:\ \phi(x)\}$$ cannot be sets for arbitrary conditions $$\phi$$, lest one wants to fall victim to [Russell's Paradox](https://en.wikipedia.org/wiki/Russell's_paradox). Some of those arbitrary collections must either not exist or be "larger" than sets, called **classes**. Discussing classes is outside the scope of this book. However, I mention them to motivate a special class worth keeping in mind &mdash; the **universal class** $${{U}}$$ that contains all sets. In most set theories, this also means that $${{U}}$$ contains all the mathematical objects being talked about because, in those theories, most objects of mathematical interest are sets!
 
 ## Membership and Set Equality
 
@@ -73,33 +73,20 @@ f^{-1}(y)=\{x \in X:\ f(x)=y\}
 $$
 Obviously $$f^{-1}(y)$$ is always a subset of $$X$$.
 
-One says that $$f$$ is **injective** iff $$f(x)=f(\tilde{x})$$ implies $$x=\tilde{x}$$. Alternatively, by logical contraposition, $$x \neq \tilde{x}$$ implies $$f(x) \neq f(\tilde{x})$$. Yet another way to phrase injectivity is this: given a $$y \in Y$$, there is _at most one_ $$x \in X$$ such that $$f(x)=y$$.
+One says that $$f$$ is **injective** iff $$f(x)=f(\tilde{x})$$ implies $$x=\tilde{x}$$. Alternatively, by logical contraposition, $$x \neq \tilde{x}$$ implies $$f(x) \neq f(\tilde{x})$$. Yet another way to phrase injectivity is this: given a $$y \in Y$$, there is _at most one_ $$x \in X$$ such that $$f(x)=y$$. As an example, for any two sets $$X \subset Y$$, there is an injection $$\iota:X \to Y$$ such that $$\iota(x) = x$$ for each $$x \in X$$. The reader can easily show that this is a well-defined injection. This injection $$\iota$$ is called the **inclusion map** from $$X$$ to $$Y$$.
 
 On the other hand, one says that $$f$$ is **surjective** iff for every $$y \in Y$$ there is _at least one_ $$x \in X$$ such that $$f(x)=y$$. Using notation defined earlier, the reader can verify that surjectivity is equivalent to any of the following assertions:
 * $$f(X)=Y$$
 * $$f^{-1}(y)\neq{{E}}$$ for any $$y \in Y$$.
-
-If a function is both injective and surjective, it is called **bijective**. Hence, if $$f$$ is bijective and $$y \in Y$$, then there is _exactly one_ $$x \in X$$ such that $$f(x)=y$$. This observation allows one to define a function $$f^\text{linv}:Y \to X$$ where $$f^\text{linv}(y)$$ is equal to that one and only $$x$$ satisfying $$f(x)=y$$. This $$f^\text{linv}$$ is called a **left inverse** of $$f$$ because it cancels $$f$$ from the left: $$f^\text{linv}(f(x))=x$$.
-
-I now present some elementary results about functions in general. These results will be used later on in the book, which is why I present them with full proofs, instead of asking the reader to recall them by heart from prerequisite knowledge.
-
-
-# Lemma TrivInj
-
-**Trivial Injection into Superset**: _Given two sets such that $$X \subseteq Y$$, there is an injection $$\iota:X \to Y$$_.
-
-**Proof**: Define $$\iota:X \to Y$$ as $$\iota(x) = x$$ for each $$x \in X$$. The reader can easily show that this is a well-defined injection. This injection $$\iota$$ is called the **inclusion map** from $$X$$ to $$Y$$.
-
-
-# Lemma TrivSurj
-
-**Trivial Surjection onto Subset**: _Given two sets such that $$Y \subseteq X$$ and $$Y \neq {{E}}$$, there is a surjection $$\sigma:X \to Y$$_.
-
-**Proof**: Because $$Y \neq {{E}}$$, there is some $$y \in Y$$. Now, define $$\sigma:X \to Y$$ thus:
+Given two sets such that $$Y \subseteq X$$ and $$Y \neq {{E}}$$, there is a surjection $$\sigma:X \to Y$$. To see this, note that $$Y \neq {{E}}$$; so there is some $$y \in Y$$. Now, define $$\sigma:X \to Y$$ thus:
 $$
 \sigma(x)=\begin{cases} x &\text{if } x \in Y \\
                         y &\text{if } x \notin Y \end{cases}
-$$ Again, it is left to the reader to show that this is a well-defined surjection.
+$$ The reader can easily show that this is a well-defined surjection.
+
+If a function is both injective and surjective, it is called **bijective**. Hence, if $$f$$ is bijective and $$y \in Y$$, then there is _exactly one_ $$x \in X$$ such that $$f(x)=y$$. This observation allows one to define a function $$f^\text{linv}:Y \to X$$ where $$f^\text{linv}(y)$$ is equal to that one and only $$x$$ satisfying $$f(x)=y$$. This $$f^\text{linv}$$ is called a **left inverse** of $$f$$ because it cancels $$f$$ from the left: $$f^\text{linv}(f(x))=x$$.
+
+I now present some elementary results about functions in general.
 
 
 # Lemma RSIS
