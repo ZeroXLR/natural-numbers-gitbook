@@ -78,6 +78,7 @@ One says that $$f$$ is **injective** iff $$f(x)=f(\tilde{x})$$ implies $$x=\tild
 On the other hand, one says that $$f$$ is **surjective** iff for every $$y \in Y$$ there is _at least one_ $$x \in X$$ such that $$f(x)=y$$. Using notation defined earlier, the reader can verify that surjectivity is equivalent to any of the following assertions:
 * $$f(X)=Y$$
 * $$f^{-1}(y)\neq{{E}}$$ for any $$y \in Y$$.
+
 Given two sets such that $$Y \subseteq X$$ and $$Y \neq {{E}}$$, there is a surjection $$\sigma:X \to Y$$. To see this, note that $$Y \neq {{E}}$$; so there is some $$y \in Y$$. Now, define $$\sigma:X \to Y$$ thus:
 $$
 \sigma(x)=\begin{cases} x &\text{if } x \in Y \\
