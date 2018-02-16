@@ -100,9 +100,7 @@ I now present some elementary results about functions in general.
 
 **Image of a Subset is a Subset of the Image**: _For any function $$f:X \to Y$$ and $$U \subseteq X$$, $$f(U) \subseteq Y$$_. _Furthermore, if $$f$$ is injective and $$U$$ is a strict subset of $$X$$, then $$f(U)$$ is a strict subset of $$Y$$_.
 
-**Proof**: Let $$y \in f(U)$$. Then, there is some $$u \in U$$ such that $$f(u)=y$$. But, $$u \in X$$ also, so that $$y=f(u) \in Y$$. Hence, $$f(U) \subseteq Y$$.
-
-Now, let $$f$$ be injective and $$U \subset X$$. Then, $$x \notin U$$ for some $$x \in X$$ i.e. for any $$u \in U$$, $$u \neq x$$. So, by injectivity, $$f(u) \neq f(x)$$ for all $$u \in U$$. Hence, $$f(x) \notin f(U)$$ but $$f(x) \in Y$$. So, $$f(U) \subset Y$$.
+**Proof**: This is left to the reader.
 
 
 ## Lemma LInvBijThenBij
@@ -122,4 +120,4 @@ Next, showing the surjectivity of $$f$$ is very easy: for any $$y \in Y$$, there
 
 **Composition of Bijections is a Bijection**: _Given bijections $$f:X \to Y$$ and $$f':Y \to Z$$, the composition $$(f' \circ f):X \to Z$$ is also a bijection_.
 
-**Proof**: Given $$z \in Z$$, there is a $$y \in Y$$ such that $$f'(y)=z$$ (as $$f'$$ is surjective) and an $$x \in X$$ such that $$f(x)=y$$ (as $$f$$ is surjective). Hence, $$(f' \circ f)(x)=f'(f(x))=z$$. Next, given $$f'(f(x))=f'(f(\tilde{x}))$$, one first gets $$f(x)=f(\tilde{x})$$ (as $$f'$$ is injective) and then gets $$x=\tilde{x}$$ (as $$f$$ is injective).
+**Proof**: This is left to the reader.
