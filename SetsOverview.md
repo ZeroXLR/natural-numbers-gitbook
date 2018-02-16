@@ -84,6 +84,24 @@ If a function is both injective and surjective, it is called **bijective**. Henc
 I now present some elementary results about functions in general. These results will be used later on in the book, which is why I present them with full proofs, instead of asking the reader to recall them by heart from prerequisite knowledge.
 
 
+# Lemma TrivInj
+
+**Trivial Injection into Superset**: _Given two sets such that $$X \subseteq Y$$, there is an injection $$\iota:X \to Y$$_.
+
+**Proof**: Define $$\iota:X \to Y$$ as $$\iota(x) = x$$ for each $$x \in X$$. The reader can easily show that this is a well-defined injection. This injection $$\iota$$ is called the **inclusion map** from $$X$$ to $$Y$$.
+
+
+# Lemma TrivSurj
+
+**Trivial Surjection onto Subset**: _Given two sets such that $$Y \subseteq X$$ and $$Y \neq {{E}}$$, there is a surjection $$\sigma:X \to Y$$_.
+
+**Proof**: Because $$Y \neq {{E}}$$, there is some $$y \in Y$$. Now, define $$\sigma:X \to Y$$ thus:
+$$
+\sigma(x)=\begin{cases} x &\text{if } x \in Y \\
+                        y &\text{if } x \notin Y \end{cases}
+$$ Again, it is left to the reader to show that this is a well-defined surjection.
+
+
 # Lemma RSIS
 
 **Restriction to Subset and its Image is Surjection**: _For any function $$f:X \to Y$$ and $$U \subseteq X$$, restricting the function's domain and codomain to $$U$$ and $$f(U)$$, respectively, produces a surjection; furthermore, if $$f$$ is an injection, so is this restriction_.

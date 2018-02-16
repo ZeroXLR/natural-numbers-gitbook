@@ -5,7 +5,7 @@
 {% set S = "\\Sigma" %}
 
 
-> Having explored order, I will now explore properties of the family of sets $${{F}}:{{N}}\to{{P}}{{N}}$$. As a reminder, I used the recursion theorems earlier to show that such a family $${{F}}$$ exists such that $${{F}}(0)={{E}}$$ and $${{F}}(S(n))={{F}}(n)\cup\{n\}$$.
+> Having explored order, I will now explore properties of the family of sets $${{F}}:{{N}}\to{{P}}{{N}}$$. As a reminder, I used the recursion theorems earlier to show that a family $${{F}}$$ exists such that $${{F}}(0)={{E}}$$ and $${{F}}(S(n))={{F}}(n)\cup\{n\}$$.
 
 
 ## Theorem FinAlt
