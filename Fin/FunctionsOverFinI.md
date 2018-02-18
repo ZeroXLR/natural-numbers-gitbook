@@ -17,11 +17,11 @@
 
 ## Lemma BFSxRBFx
 
-**Bijection from $${{F}}(S(n))$$ to Subset Restricts to Bijection from $${{F}}(n)$$ to Subset**: _Fix an $$n\in{{N}}$$_. _If one has a bijection $$f:{{F}}(S(n)) \to X$$ for some $$X\subset{{F}}(S(n))$$, then one has a bijection $$f':{{F}}(n) \to X'$$ for some $$X'\subset{{F}}(n)$$_.
+**Bijection from $${{F}}(S(n))$$ to Subset Restricts to Bijection from $${{F}}(n)$$ to Subset**: _Fix an $$n\in{{N}}$$_. _If one has a bijection $$f:{{F}}(S(n)) \to X$$ for some $$X\subseteq{{F}}(S(n))$$, then one has a bijection $$f':{{F}}(n) \to X'$$ for some $$X'\subseteq{{F}}(n)$$_. _Furthermore, if $$X$$ is not only a subset of $${{F}}(S(n))$$ but even a strict subset of $${{F}}(S(n))$$, then $$X'$$ must be a strict subset of $${{F}}(n)$$ also_.
 
 **Proof**: There are two cases to consider:
 
-<span style="text-decoration: underline;">_**Suppose first that $$n \notin X$$:**_</span> Thus, $$X\subseteq{{F}}(n)$$ by [Lemma SFSxWSFx](#lemma-sfsxwsfx). Now, restrict $$f$$ to the domain $${{F}}(n)$$ and the codomain $$X'=f({{F}}(n))$$ as described in [Lemma RSIS](../SetsOverview.md#lemma-rsis). By the lemma, this restriction is bijective. Also, since $${{F}}(n) \subset {{F}}(S(n))$$, by [Lemma ISSI](../SetsOverview.md#lemma-issi),
+<span style="text-decoration: underline;">_**Suppose first that $$n \notin X$$:**_</span> Thus, $$X\subseteq{{F}}(n)$$ by [Lemma SFSxWSFx](#lemma-sfsxwsfx). So in this case, $$X$$ has to be a strict subset of $${{F}}(S(n))$$. Now, restrict $$f$$ to the domain $${{F}}(n)$$ and the codomain $$X'=f({{F}}(n))$$ as described in [Lemma RSIS](../SetsOverview.md#lemma-rsis). By the lemma, this restriction is bijective. Also, since $${{F}}(n) \subset {{F}}(S(n))$$, by [Lemma ISSI](../SetsOverview.md#lemma-issi),
 $$
 X'=f({{F}}(n)) \subset f({{F}}(S(n)))=X \subseteq {{F}}(n)
 $$ Thus, this restriction is the required bijection from $${{F}}(n)$$ to a strict subset of itself.
@@ -53,7 +53,7 @@ Thus, in both cases, $$x \neq \tilde{x}$$ implies $$f'(x) \neq f'(\tilde{x})$$ i
 
 * Thirdly, I show that $$f'$$ is surjective. So take any $$y\in X'=X\setminus\{n\}$$. Since $$f$$ is bijective, $$f(x)=y$$ for some $$x\in{{F}}(S(n))$$. Now, since $$f(x)=y \neq n=f(x_n)$$ (because $$y\in X\setminus\{n\}$$) one must have $$x \neq x_n$$, lest $$f$$ map one value to more than one value. Now, $${{F}}(S(n))={{F}}(n)\cup\{n\}$$. So, either $$x=n$$ or $$x\in{{F}}(n)$$. For the former, note that $$x_n \neq x=n$$ so that $$x_n\in{{F}}(n)$$. But then, one has $$x_n\in{{F}}(n)$$ such that $$f'(x_n)=f(n)=f(x)=y$$. Otherwise, for the latter, since $$x \neq x_n$$ by before, $$f'(x)=f(x)=y$$; thus, again, one has $$x\in{{F}}(n)$$ such that $$f'(x)=y$$.
 
-* Finally, as $$X$$ is a strict subset of $${{F}}(S(n))$$, then, some $$x\in{{F}}(S(n))$$ is not in $$X$$. This $$x$$ cannot be $$n$$ as one assumed earlier that $$n$$ is in $$X$$. Thus, $$x\in{{F}}(n)$$. Also, since $$X'=X\setminus\{n\} \subseteq X$$, $$x$$ cannot be in $$X$$. In other words, $$X'$$ is missing an element $$x$$ of $${{F}}(n)$$ despite being a subset of $${{F}}(n)$$ i.e. $$X'$$ is a strict subset of $${{F}}(n)$$.
+* Finally, if $$X$$ is in fact a strict subset of $${{F}}(S(n))$$, then some $$x\in{{F}}(S(n))$$ is not in $$X$$. This $$x$$ cannot be $$n$$ as it was assumed earlier that $$n$$ is in $$X$$. Thus, $$x\in{{F}}(n)$$. Also, since $$X'=X\setminus\{n\} \subseteq X$$, $$x$$ cannot be in $$X$$. In other words, $$X'$$ is missing an element $$x$$ of $${{F}}(n)$$ despite being a subset of $${{F}}(n)$$ i.e. $$X'$$ is a strict subset of $${{F}}(n)$$.
 
 
 &nbsp;
