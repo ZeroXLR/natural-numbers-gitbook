@@ -77,7 +77,7 @@ $$
 f^U(x)=\begin{cases} f(x) &\text{if } x<k \\
                      n    &\text{if } x=k \end{cases}
 $$
-The reader should show that this function is well-defined and bijective is left as an easy. Note furthermore that as $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the theorem's requirements as applied to $${{F}}(S(n))$$.
+The reader should show that this function is well-defined and bijective. Note furthermore that as $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the theorem's requirements as applied to $${{F}}(S(n))$$.
 
 This completes the induction and one always has a $$k \leq n$$ with some bijection $$f$$ from $${{F}}(k)$$ to $$U$$.
 
