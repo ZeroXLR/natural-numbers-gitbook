@@ -22,14 +22,14 @@ This is the basic procedure of defining a recursive function over $${{N}}$$. Fir
 $$
 {{F}} = \{F \subseteq {{N}} \times X:\ (0,x) \in F \ \ \text{and}\ \ (S(n),\varphi(F_n)) \in F \ \text{if}\ (n,F_n) \in F\}
 $$
-This set is non-empty because obviously the entire product set $${{N}} \times X$$ itself satisfies both of the conditions of $${{F}}$$.
+This set is non-empty because the entire product set $${{N}} \times X$$ itself satisfies both of the conditions of $${{F}}$$.
 
 Now, define $$f$$ to be the intersection of all the $$F$$'s in $${{F}}$$ i.e. $$
 f=\bigcap{{F}}=\{p\in{{U}}:\ F\in{{F}}\ \text{implies}\ p \in F\}
 $$
 $$f$$, thus defined, is a valid set because $${{F}}$$ is non-empty; otherwise, $$f$$ would be $${{U}}$$ itself, which is not a set. Also, as all elements in $${{F}}$$ satisfy both conditions of the theorem, so must $$f$$ satisfy both conditions of the theorem.
 
-Next, one must show that $$f$$ is many-to-one i.e. it maps the same value to at most one value. This is quite involved! Essentially, one has to show that if $$n\in{{N}}$$ and $$y,\tilde{y} \in X$$ and $$(n,y), (n,\tilde{y}) \in f$$, then $$y = \tilde{y}$$. This is accomplished by induction:
+Next, one must show that $$f$$ maps a given value to at most one value. Essentially, one has to show that if $$n\in{{N}}$$ and $$y,\tilde{y} \in X$$ and $$(n,y), (n,\tilde{y}) \in f$$, then $$y = \tilde{y}$$. This is accomplished by induction:
 
 * The property to be shown is true for $$0$$. For, suppose $$(0,y),(0,\tilde{y}) \in f$$. Well, $$(0,x) \in f$$ also. Now, if both $$y$$ and $$\tilde{y}$$ are $$x$$, one is done. Otherwise, assume for the sake of a contradiction that one of them is not $$x$$. Without loss of generality let it be $$y$$ which is not equal to $$x$$. Consider, now, the set $$f'=f\setminus\{(0,y)\}$$. $$(0,x) \in f'$$ because $$(0,x) \in f$$ and $$(0,x)\neq(0,y)$$ by construction. Also, say $$(n,f_n) \in f'$$. Then, $$(n,f_n) \in f$$ also; so since $$f$$ satisfies the second condition of this theorem, $$(S(n),\varphi(f_n)) \in f$$. But as $$S(n) \neq 0$$ by [Peano axiom 3](../Peano.md#definition-peano-axioms), it must be that $$(S(n),\varphi(f_n))\neq(0,y)$$; hence, $$(S(n),\varphi(f_n)) \in f'$$. Thus, $$f'$$ also satisfies the conditions of $${{F}}$$ i.e. $$f'\in{{F}}$$. But then,
 $$
@@ -60,4 +60,12 @@ Finally, I show that $$f$$ is unique. To begin with, assume that there is anothe
 * $$f(0)=x$$ _and_
 * $$f(S(n))=\varphi(f(n),n)$$.
 
-**Proof Sketch**: Simply modify all occurrences of $$\varphi$$ in the previous proof appropriately. The logical structure itself needs no change.
+**Proof Sketch**: On the outset, this theorem looks more general than the previous one. After all, the previous theorem is a clear special case of this one. However, one can actually derive this theorem from the previous one. To do this, assume $$X$$, $$x$$ and $$\varphi$$ to be given as prescribed by this theorem.
+
+Now, define $$\tilde{X}=X\times{{N}}$$ and $$\tilde{\varphi}:\tilde{X}\to\tilde{X}$$ to be $$\tilde{\varphi}(x,n)=(\varphi(x,n),S(n))$$. Applying the previous theorem on $$\tilde{X}$$, $$(x,0)$$ and $$\tilde{\varphi}$$ yields a unique function $$\tilde{f}:{{N}}\to\tilde{X}$$ such that
+* $$\tilde{f}(0)=(x,0)$$ and
+* $$\tilde{f}(S(n))=\tilde{\varphi}(\tilde{f}(n))=(\varphi(\tilde{f}(n)),S(n))$$
+
+Next, one can define the required function thus: $$f:{{N}}\ni n\mapsto\text{first}(\tilde{f}(n))\in X$$. Here, the function $$\text{first}:\tilde{X}\to X$$ simply returns the first member of an ordered pair in $$\tilde{X}=X\times{{N}}$$ i.e. $$\text{first}(x,n)=x$$. An entirely analogous function $$\text{second}$$ can also be defined and using this, one can show by an easy induction that $$\text{second}(\tilde{f}(n))=n$$ for all $$n\in{{N}}$$.
+
+Finally, the reader can verify that $$f$$ does indeed satisfy the required conditions of the theorem.
