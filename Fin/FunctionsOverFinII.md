@@ -41,18 +41,18 @@ _If there is an injection from $${{F}}(n)$$ to $${{F}}(k)$$ where $$k \leq n$$, 
 
 **Surjection produces Inverted Bijection**: _If $$f:{{F}}(n)\to{{F}}(n)$$ is an surjection, then there exists a bijection $$f':{{F}}(n)\to{{F}}(n)$$ such that $$f(f'(y))=y$$ for $$y\in{{F}}(n)$$_.
 
-**Proof**: By the hypothesis of the theorem, $$f^{-1}(y)\neq{{E}}$$ and $$f^{-1}(y)\subseteq{{F}}(n)\subseteq{{N}}$$ for any $$y\in{{F}}(n)$$. Thus, by well-ordering, for every $$y\in{{F}}(n)$$, there is a unique element $$\text{min}(f^{-1}(y)) \in f^{-1}(y)$$. So, the following function is automatically well-defined:
+**Proof**: By theorem's hypothesis, $$f^{-1}(y)\neq{{E}}$$ and $$f^{-1}(y)\subseteq{{F}}(n)\subseteq{{N}}$$ for any $$y\in{{F}}(n)$$. Thus by well-ordering, for every $$y\in{{F}}(n)$$, there is a unique element $$\text{min}(f^{-1}(y)) \in f^{-1}(y)$$. So, the following function is automatically well-defined:
 $$
 f':{{F}}(n) \ni y\mapsto\text{min}(f^{-1}(y)) \in f^{-1}(y)\subseteq{{F}}(n)
 $$
 
-Next, for any $$y\in{{F}}(n)$$, $$f'(y)=\text{min}(f^{-1}(y)) \in f^{-1}(y)$$. Hence, by definition of the set condition of $$f^{-1}(y)$$, $$f(f'(y))=y$$.
+Next, for any $$y\in{{F}}(n)$$, $$f'(y)=\text{min}(f^{-1}(y)) \in f^{-1}(y)$$. Hence, by definition of the set $$f^{-1}(y)$$, $$f(f'(y))=y$$.
 
-Finally, to check that this function is bijective, I will instead check that it is injective. That it is surjective will then follow from [Corollary ifInjthenBij](#corollary-ifinjthenbij). So, suppose for $$y,y'\in{{F}}(n)$$ that $$f'(y)=f'(y')$$; one now needs to show that $$y=y'$$. Well, by the definition of $$f'$$, $$\text{min}(f^{-1}(y))=\text{min}(f^{-1}(y'))$$. So,
+Finally, to show this function's bijectivity, I will instead show its injectivity. That it is surjective will then follow from [Corollary ifInjthenBij](#corollary-ifinjthenbij). So, suppose for $$y,y'\in{{F}}(n)$$ that $$f'(y)=f'(y')$$. Then, by the definition of $$f'$$, $$\text{min}(f^{-1}(y))=\text{min}(f^{-1}(y'))$$. So,
 $$
 y=f(\text{min}(f^{-1}(y)))=f(\text{min}(f^{-1}(y')))=y'
 $$
-since $$f$$ is a function that maps equal values to equal values.
+since $$f$$, being a function, maps values to unique values.
 
 
 ## Corollary ifSurjthenBij
@@ -60,10 +60,6 @@ since $$f$$ is a function that maps equal values to equal values.
 _If $$f:{{F}}(n)\to{{F}}(n)$$ is a surjection, then it is also a bijection_.
 
 > This result is a straightforward application of the previous lemma and [Lemma LInvBijThenBij](../SetsOverview.md#lemma-linvbijthenbij). I leave it for the readers to fill in the relevant details.
-
-
-&nbsp;
-> I end this section with another important result about $${{F}}$$. It partially alleviates the limitations put on subsets of $${{F}}(n)$$ by the [main theorem at the beginning](#theorem-nbfps). It says that even though there are no bijections between $${{F}}(n)$$ and a proper subset of it, there is a $$k<n$$ such that one has a bijection between $${{F}}(k)$$ and that proper subset.
 
 
 ## Theorem SFnBSFk
@@ -76,12 +72,12 @@ $$
 \text{id}_{{E}}:{{E}}={{F}}(k)={{F}}(0) \ni x\mapsto x \in U={{E}}
 $$
 This function is vacuously well-defined and vacuously bijective.
-2. Now suppose the claim is true for $${{F}}(n)$$. Consider any $$U\subseteq{{F}}(S(n))$$. If $$n \notin U$$, then certainly $$U\subseteq{{F}}(n)$$. So immediately, the inductive hypothesis guarantees that there is exactly one $$k \leq n<S(n)$$ with a bijection $${{F}}(k) \to U$$. So, suppose $$n \in U$$. Here, $$U\setminus\{n\}\subseteq{{F}}(n)$$ and the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $$f:{{F}}(k) \to U\setminus\{n\}$$. Lift this smaller bijection to a bigger bijection $$f^U:{{F}}(S(k)) \to U$$ thus:
+2. Now suppose the claim is true for $${{F}}(n)$$. Consider any $$U\subseteq{{F}}(S(n))$$. If $$n \notin U$$, then certainly $$U\subseteq{{F}}(n)$$. So immediately, the inductive hypothesis guarantees gives a $$k \leq n<S(n)$$ and a bijection $${{F}}(k) \to U$$. Now, suppose $$n \in U$$. Here, $$U\setminus\{n\}\subseteq{{F}}(n)$$ and the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $$f:{{F}}(k) \to U\setminus\{n\}$$. Lift this smaller bijection to a bigger bijection $$f^U:{{F}}(S(k)) \to U$$ thus:
 $$
 f^U(x)=\begin{cases} f(x) &\text{if } x<k \\
                      n    &\text{if } x=k \end{cases}
 $$
-Showing that this function definition is well-defined and bijective is left as an easy, if lengthy, exercise for the reader. Note, furthermore, that since $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the requirements of the theorem, as applied to $${{F}}(S(n))$$.
+The reader should show that this function is well-defined and bijective is left as an easy. Note furthermore that as $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the theorem's requirements as applied to $${{F}}(S(n))$$.
 
 This completes the induction and one always has a $$k \leq n$$ with some bijection $$f$$ from $${{F}}(k)$$ to $$U$$.
 
@@ -90,4 +86,4 @@ This completes the induction and one always has a $$k \leq n$$ with some bijecti
 
 **Subset of $${{F}}(n)$$ is Bijective to Some Unique $${{F}}(k)$$**: _Fix an $$n\in{{N}}$$_. _For every $$U\subseteq{{F}}(n)$$, there is **exactly one** $$k \leq n$$ with some bijection from $${{F}}(k)$$ to $$U$$_.
 
-**Proof**: Continuing from the end of the previous proof, only the uniqueness part remains to be shown. For this, the reader should keep in their minds [results about functions shown earlier](../SetsOverview.md#functions-as-sets). So, suppose there is some other $$\tilde{k}\in{{N}}$$ with a bijection $${{F}}(\tilde{k}) \to U$$. Now, totality gives either $$\tilde{k} \leq k$$ or $$k\leq\tilde{k}$$. Assume w.l.o.g. that $$\tilde{k} \leq k$$; the other case can be handled similarly. Continuing, the bijection associated with $$\tilde{k}$$ induces a left inverse $$\phi:U\to{{F}}(\tilde{k})$$ that is also a bijection. Composing, one gets a bijectiion $$(\phi \circ f):{{F}}(k)\to{{F}}(\tilde{k})$$. Since $$\tilde{k} \leq k$$, it must be that $${{F}}(\tilde{k})\subseteq{{F}}(k)$$. But $${{F}}(k)$$ has no bijections from itself to a proper subset of itself. Hence, $${{F}}(\tilde{k})={{F}}(k)$$, so that $$\tilde{k}=k$$.
+**Proof**: Continuing from the end of the previous proof, only the uniqueness part remains to be shown. For this, the reader should keep in their minds [results about functions shown earlier](../SetsOverview.md#functions-as-sets). So, suppose there is some other $$\tilde{k}\in{{N}}$$ with a bijection $${{F}}(\tilde{k}) \to U$$. Now, totality gives either $$\tilde{k} \leq k$$ or $$k\leq\tilde{k}$$. Assume w.l.o.g. that $$\tilde{k} \leq k$$; the other case is handled similarly. Continuing, the bijection associated with $$\tilde{k}$$ induces a left inverse $$\phi:U\to{{F}}(\tilde{k})$$ that is also a bijection. Composing, one gets a bijectiion $$(\phi \circ f):{{F}}(k)\to{{F}}(\tilde{k})$$. Since $$\tilde{k} \leq k$$, it must be that $${{F}}(\tilde{k})\subseteq{{F}}(k)$$. But $${{F}}(k)$$ is not bijective to any of its proper subsets. Hence, $${{F}}(\tilde{k})={{F}}(k)$$, so that $$\tilde{k}=k$$.
