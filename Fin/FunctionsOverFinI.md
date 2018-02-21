@@ -17,7 +17,7 @@
 
 ## Lemma BFSxSDBFxSS
 
-**Bijection from $${{F}}(S(n))$$ to Set Descends to Bijection from $${{F}}(n)$$ to Subset**: _Fix an $$n\in{{N}}$$_. _If one has a bijection $$f:{{F}}(S(n)) \to X$$ for some $$X\subset{{F}}(S(n))$$, then for any $$x \in X$$, one has a bijection $$f':{{F}}(n) \to X'=X\setminus\{x\}$$_.
+**Bijection from $${{F}}(S(n))$$ to Set Descends to Bijection from $${{F}}(n)$$ to Subset**: _Fix an $$n\in{{N}}$$_. _If for an arbitrary set $$X$$ one has a bijection $$f:{{F}}(S(n)) \to X$$, then for any $$x \in X$$, one has a bijection $$f':{{F}}(n) \to X'=X\setminus\{x\}$$_.
 
 **Proof**: Since $$f$$ is surjective, there is a natural $$k\in{{F}}(S(n))$$ such that $$f(k)=x$$. There are two cases to consider:
 
