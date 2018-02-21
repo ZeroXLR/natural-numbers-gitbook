@@ -67,17 +67,18 @@ f(U)=\{y \in Y:\ y=f(x)\ \text{for some}\ x \in U\}
 $$
 Obviously $$f(U)$$ is always a subset of $$Y$$.
 
-For a given element of $$Y$$, the set of all elements of $$X$$ that map to that element is denoted by $$f^{-1}(y)$$. More explicitly,
+For a given element $$y$$ of $$Y$$, the set of all elements of $$X$$ that map to that element is denoted by $$f^{-1}(y)$$. More explicitly,
 $$
 f^{-1}(y)=\{x \in X:\ f(x)=y\}
 $$
-Obviously $$f^{-1}(y)$$ is always a subset of $$X$$.
+Obviously $$f^{-1}(y)$$ is always a subset of $$X$$. Generalizing, given $$U \subseteq Y$$, the set of all elements of $$X$$ mapping into $$U$$ is denoted by $$f^{-1}(U)$$ i.e. $$f^{-1}(U)=\{x \in X:\ f(x) \in U\}$$. Note that $$f(f^{-1}(U)) \subseteq U$$.
 
 One says that $$f$$ is **injective** iff $$f(x)=f(\tilde{x})$$ implies $$x=\tilde{x}$$. Alternatively, by logical contraposition, $$x \neq \tilde{x}$$ implies $$f(x) \neq f(\tilde{x})$$. Yet another way to phrase injectivity is this: given a $$y \in Y$$, there is _at most one_ $$x \in X$$ such that $$f(x)=y$$. As an example, for any two sets $$X \subset Y$$, there is an injection $$\iota:X \to Y$$ such that $$\iota(x) = x$$ for each $$x \in X$$. The reader can easily show that this is a well-defined injection. This injection $$\iota$$ is called the **inclusion map** from $$X$$ to $$Y$$.
 
 On the other hand, one says that $$f$$ is **surjective** iff for every $$y \in Y$$ there is _at least one_ $$x \in X$$ such that $$f(x)=y$$. Using notation defined earlier, the reader can verify that surjectivity is equivalent to any of the following assertions:
 * $$f(X)=Y$$
 * $$f^{-1}(y)\neq{{E}}$$ for any $$y \in Y$$.
+* $$U \subseteq f(f^{-1}(U))$$ for every $$U \subseteq Y$$
 
 Given two sets such that $$Y \subseteq X$$ and $$Y \neq {{E}}$$, there is a surjection $$\sigma:X \to Y$$. To see this, note that $$Y \neq {{E}}$$; so there is some $$y \in Y$$. Now, define $$\sigma:X \to Y$$ thus:
 $$
