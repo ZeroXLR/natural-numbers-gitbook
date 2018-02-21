@@ -1,5 +1,6 @@
 {% set N = "\\mathbb{N}" %}
 {% set F = "\\text{Fin}" %}
+{% set U = "\\mathcal{U}" %}
 {% set P = "\\mathcal{P}" %}
 {% set E = "\\emptyset" %}
 {% set S = "\\Sigma" %}
@@ -62,6 +63,17 @@ _If $$f:{{F}}(n)\to{{F}}(n)$$ is a surjection, then it is also a bijection_.
 > This result is a straightforward application of the previous lemma and [Lemma LInvBijThenBij](../SetsOverview.md#lemma-linvbijthenbij). I leave it for the readers to fill in the relevant details.
 
 
+## Lemma BFxSABFSxSS
+
+**Bijection from $${{F}}(n)$$ to Set Ascends to Bijection from $${{F}}(S(n))$$ to Superset**: _Fix an $$n\in{{N}}$$_. _If for an arbitrary set $$X$$ one has a bijection $$f:{{F}}(n) \to X$$, then for arbitrary $$y\in{{U}}$$ such that $$y \notin X$$, one has a bijection $$\tilde{f}:{{F}}(S(n)) \to X\cup\{y\}$$_.
+
+**Proof Sketch**: Define $$\tilde{f}:{{F}}(S(n)) \to X\cup\{y\}$$ thus:
+$$
+\tilde{f}(x)=\begin{cases} f(x) &\text{if } x<n \\
+                           y    &\text{if } x=n \end{cases}
+$$ Now, every $$x\in{{F}}(S(n))$$ is either less that $$n$$ or is $$n$$. If $$x<n$$, $$\tilde{f}(x)$$ refers to the unique value $$f(x)$$ in $$X$$ since $$f$$ is a well-defined by hypothesis. If $$x=n$$, $$\tilde{f}(x)$$ obviously refers to the unique value $$y \in X\cup\{y\}$$. In both cases, $$\tilde{f}$$ maps each value in its domain to a unique value in its codomain, making the function well-defined. A proof of bijectivity is left to the reader.
+
+
 ## Theorem SFnBSFk
 
 **Subset of $${{F}}(n)$$ is Bijective to Some $${{F}}(k)$$**: _Fix an $$n\in{{N}}$$_. _For every $$U\subseteq{{F}}(n)$$, there is a $$k \leq n$$ with some bijection from $${{F}}(k)$$ to $$U$$_.
@@ -72,14 +84,7 @@ $$
 \text{id}_{{E}}:{{E}}={{F}}(k)={{F}}(0) \ni x\mapsto x \in U={{E}}
 $$
 This function is vacuously well-defined and vacuously bijective.
-2. Now suppose the claim is true for $${{F}}(n)$$. Consider any $$U\subseteq{{F}}(S(n))$$. If $$n \notin U$$, then certainly $$U\subseteq{{F}}(n)$$. So immediately, the inductive hypothesis guarantees gives a $$k \leq n<S(n)$$ and a bijection $${{F}}(k) \to U$$. Now, suppose $$n \in U$$. Here, $$U\setminus\{n\}\subseteq{{F}}(n)$$ and the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $$f:{{F}}(k) \to U\setminus\{n\}$$. Lift this smaller bijection to a bigger bijection $$f^U:{{F}}(S(k)) \to U$$ thus:
-$$
-f^U(x)=\begin{cases} f(x) &\text{if } x<k \\
-                     n    &\text{if } x=k \end{cases}
-$$
-The reader should show that this function is well-defined and bijective. Note furthermore that as $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the theorem's requirements as applied to $${{F}}(S(n))$$.
-
-This completes the induction and one always has a $$k \leq n$$ with some bijection $$f$$ from $${{F}}(k)$$ to $$U$$.
+2. Now suppose the claim is true for $${{F}}(n)$$. Consider any $$U\subseteq{{F}}(S(n))$$. If $$n \notin U$$, then certainly $$U\subseteq{{F}}(n)$$. So immediately, the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $${{F}}(k) \to U$$. Now, suppose $$n \in U$$. Here, $$U\setminus\{n\}\subseteq{{F}}(n)$$ and the inductive hypothesis gives a $$k \leq n<S(n)$$ and a bijection $$f:{{F}}(k) \to U\setminus\{n\}$$. Lift this smaller bijection to a bigger bijection from $$f^U:{{F}}(S(k))$$ to $$U$$ as per the lemma above. Note furthermore that as $$k<S(n)$$, $$S(k) \leq S(n)$$. Hence, this bijection satisfies the theorem's requirements as applied to $${{F}}(S(n))$$.
 
 
 ## Corollary SFnBSUFk
